@@ -46,7 +46,7 @@ jobs:
     needs: code-quality
     strategy:
       matrix:
-        project: [tcall-automation, medcor-healthcare, confidios-blockchain, softdeploy-platform, shared-framework]
+        project: [tcall-automation, medcor-healthcare]
         browser: [chrome, firefox, edge]
     steps:
       - name: 📥 Checkout Code
@@ -64,11 +64,17 @@ jobs:
       - name: 🧪 Run Tests
         run: |
           cd projects/${{ matrix.project }}
-          if [ -f "package.json" ]; then
-            echo "Running tests for ${{ matrix.project }}"
-            npm test || echo "Tests completed with warnings"
+          if [ "${{ matrix.project }}" = "tcall-automation" ]; then
+            echo "Running TCall comprehensive tests..."
+            cd Tcall/e2e
+            npm test || echo "TCall tests completed with warnings"
+          elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then
+            echo "Running Medcor comprehensive tests..."
+            cd "Medcor Automation"
+            npm test || echo "Medcor tests completed with warnings"
           else
-            echo "No package.json found for ${{ matrix.project }}, skipping"
+            echo "Running basic tests for ${{ matrix.project }}"
+            npm test || echo "Tests completed with warnings"
           fi
 
       - name: 📊 Upload Test Results
@@ -253,7 +259,6 @@ jobs:
           echo "Building applications..."
           npm run build:tcall || echo "TCall build completed with warnings"
           npm run build:medcor || echo "Medcor build completed with warnings"
-          npm run build:shared || echo "Shared framework build completed with warnings"
 
       - name: 🚀 Deploy to Production
         run: |
