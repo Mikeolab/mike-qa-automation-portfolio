@@ -1,0 +1,7 @@
+
+# Large video files (too big for GitHub)
+*.mp4
+*.mov
+*.avi
+*.mkv
+projects/*/Tcall/tcall_marketing_website/marketing-html/assets/video/
