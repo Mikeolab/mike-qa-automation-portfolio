@@ -46,7 +46,7 @@ jobs:
     needs: code-quality
     strategy:
       matrix:
-        project: [tcall-automation, medcor-healthcare, shared-framework]
+        project: [tcall-automation, medcor-healthcare, confidios-blockchain, softdeploy-platform, shared-framework]
         browser: [chrome, firefox, edge]
     steps:
       - name: 📥 Checkout Code

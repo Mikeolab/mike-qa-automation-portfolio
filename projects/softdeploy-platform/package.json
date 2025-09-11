@@ -1,0 +1,92 @@
+{
+  "name": "softdeploy-platform",
+  "version": "1.0.0",
+  "description": "SoftDeploy - Real Test Automation Platform with AI-powered test generation",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "test": "npm run test:unit && npm run test:e2e",
+    "test:unit": "cd client && npm run test:unit",
+    "test:e2e": "cd client && npm run test:e2e",
+    "test:e2e:report": "cd client && npm run test:e2e:report",
+    "test:api": "cd server && npm run test",
+    "test:integration": "npm run test:api && npm run test:e2e",
+    "lint": "npm run lint:client && npm run lint:server",
+    "lint:client": "cd client && npm run lint",
+    "lint:server": "cd server && npm run lint",
+    "lint:fix": "npm run lint:client:fix && npm run lint:server:fix",
+    "lint:client:fix": "cd client && npm run lint:fix",
+    "lint:server:fix": "cd server && npm run lint:fix",
+    "type-check": "npm run type-check:client && npm run type-check:server",
+    "type-check:client": "cd client && npm run type-check",
+    "type-check:server": "cd server && npm run type-check",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "clean": "npm run clean:client && npm run clean:server",
+    "clean:client": "cd client && rm -rf dist node_modules/.vite",
+    "clean:server": "cd server && rm -rf dist",
+    "seed:sample": "cd server && npm run seed:sample",
+    "docker:build": "docker build -t softdeploy-platform .",
+    "docker:run": "docker run -p 5000:5000 -p 5173:5173 softdeploy-platform",
+    "deploy": "npm run build && npm run deploy:server",
+    "deploy:server": "cd server && npm run deploy",
+    "ci": "npm run install:all && npm run lint && npm run type-check && npm run test",
+    "report": "npm run test:e2e:report",
+    "setup": "npm run install:all && npm run seed:sample",
+    "validate": "npm run lint && npm run type-check && npm run test:unit"
+  },
+  "keywords": [
+    "softdeploy",
+    "test-automation",
+    "qa-platform",
+    "ai-testing",
+    "cypress",
+    "playwright",
+    "selenium",
+    "puppeteer",
+    "react",
+    "nodejs",
+    "commercial-platform"
+  ],
+  "author": "Mike Olab",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0",
+    "jest": "^29.0.0",
+    "@types/jest": "^29.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "socket.io": "^4.7.0",
+    "puppeteer": "^21.0.0",
+    "ws": "^8.14.0",
+    "dotenv": "^16.3.0",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "compression": "^1.7.4"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mikeolab/mike-qa-automation-portfolio.git",
+    "directory": "projects/softdeploy-platform"
+  },
+  "bugs": {
+    "url": "https://github.com/Mikeolab/mike-qa-automation-portfolio/issues"
+  },
+  "homepage": "https://github.com/Mikeolab/mike-qa-automation-portfolio#readme"
+}

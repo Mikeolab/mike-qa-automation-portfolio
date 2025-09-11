@@ -13,7 +13,7 @@ Experienced QA Automation Engineer with expertise in building robust, scalable t
 - 🔧 **Problem Solving**: Innovative approaches to testing challenges (webhook limitations, multi-role validation)
 - 🚀 **CI/CD Integration**: Streamlined testing pipelines and deployment automation
 - 📊 **Cross-Platform Testing**: Web, mobile, and API testing expertise
-- 🏥 **Industry Experience**: Healthcare, telecommunications, and enterprise applications
+- 🏥 **Industry Experience**: Healthcare, telecommunications, blockchain, and SaaS applications
 
 ## 🏆 Featured Projects
 
@@ -26,6 +26,16 @@ Experienced QA Automation Engineer with expertise in building robust, scalable t
 **Challenge**: Multi-role user validation across complex healthcare workflows
 **Solution**: Comprehensive role-based testing framework with data-driven scenarios
 **Impact**: Zero production bugs in critical patient care features
+
+### 🔐 Confidios Blockchain Data Platform
+**Challenge**: Self-sovereign data platform with blockchain encryption requiring comprehensive QA automation
+**Solution**: Advanced test flagging system with API change detection and Azure DevOps integration
+**Impact**: Automated test maintenance, 95% API coverage validation, seamless CI/CD integration
+
+### 🚀 SoftDeploy Test Automation Platform
+**Challenge**: Building a comprehensive, sellable test management platform with real test execution capabilities
+**Solution**: Full-stack application with AI-powered test generation, real browser automation, and unified reporting
+**Impact**: Complete test automation solution ready for commercial deployment
 
 ### 🔧 QA Automation Framework
 **Challenge**: Standardizing testing practices across multiple projects
@@ -79,7 +89,7 @@ Experienced QA Automation Engineer with expertise in building robust, scalable t
 
 ## 🎯 Case Studies
 
-### **Case Study 1: Webhook Architecture Innovation**
+### **Case Study 1: TCall Webhook Architecture Innovation**
 **Problem**: Retell's platform limited webhook testing to single scenarios
 **Solution**: Developed custom webhook proxy with routing capabilities
 **Technologies**: Node.js, Express, WebSocket, Docker
@@ -88,7 +98,7 @@ Experienced QA Automation Engineer with expertise in building robust, scalable t
 - Reduced test execution time by 40%
 - Achieved 95% automation coverage
 
-### **Case Study 2: Healthcare Multi-Role Testing**
+### **Case Study 2: Medcor Healthcare Multi-Role Testing**
 **Problem**: Complex user role validation across patient care workflows
 **Solution**: Role-based testing framework with dynamic data management
 **Technologies**: Cypress, TypeScript, PostgreSQL
@@ -97,7 +107,27 @@ Experienced QA Automation Engineer with expertise in building robust, scalable t
 - 100% role permission validation
 - Streamlined compliance testing
 
-### **Case Study 3: CI/CD Pipeline Optimization**
+### **Case Study 3: Confidios Blockchain Test Automation**
+**Problem**: Self-sovereign data platform requiring automated test maintenance
+**Solution**: Advanced test flagging system with API change detection
+**Technologies**: Cypress, Jenkins, Azure DevOps, OpenAPI
+**Results**:
+- 95% API endpoint coverage
+- 90% reduction in manual test maintenance
+- Automated Azure DevOps integration
+- Real-time test flagging system
+
+### **Case Study 4: SoftDeploy Commercial Platform**
+**Problem**: Building a comprehensive, sellable test automation platform
+**Solution**: Full-stack application with AI-powered test generation
+**Technologies**: React, Node.js, Puppeteer, Gemini AI, Supabase
+**Results**:
+- Real test execution (not simulation)
+- AI-powered natural language test creation
+- Complete user management and collaboration
+- Production-ready commercial application
+
+### **Case Study 5: CI/CD Pipeline Optimization**
 **Problem**: Manual testing bottlenecks in deployment pipeline
 **Solution**: Automated testing integration with parallel execution
 **Technologies**: GitHub Actions, Docker, Kubernetes
@@ -127,6 +157,8 @@ mike-qa-automation-portfolio/
 ├── projects/
 │   ├── tcall-automation/          # TCall webhook testing solution
 │   ├── medcor-healthcare/         # Healthcare platform testing
+│   ├── confidios-blockchain/      # Blockchain data platform automation
+│   ├── softdeploy-platform/      # Commercial test automation platform
 │   └── shared-framework/          # Common testing utilities
 ├── docs/
 │   ├── case-studies/              # Detailed project analyses

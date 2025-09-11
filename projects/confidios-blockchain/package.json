@@ -1,0 +1,71 @@
+{
+  "name": "confidios-blockchain-automation",
+  "version": "1.0.0",
+  "description": "Confidios blockchain data platform QA automation with advanced test flagging system",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:headless": "cypress run --headless",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:admin": "cypress run --spec 'cypress/e2e/Admin_flow.cy.js'",
+    "test:onboarding": "cypress run --spec 'cypress/e2e/Full_Customer_Onboarding_Flow.cy.js'",
+    "test:fileops": "cypress run --spec 'cypress/e2e/New User Flow – Directory and File Ops.cy.js'",
+    "flagging:check": "node test-flagging.js --check",
+    "flagging:report": "node test-flagging.js --report",
+    "flagging:azure": "node test-flagging.js --azure",
+    "flagging:watch": "node test-flagging.js --watch",
+    "generate:tests": "node test-stub-generator/generator.js",
+    "jenkins:test": "npm run test:headless && npm run flagging:check",
+    "lint": "eslint cypress/ test-flagging.js",
+    "lint:fix": "eslint cypress/ test-flagging.js --fix",
+    "type-check": "tsc --noEmit",
+    "build": "echo 'No build step required for Cypress tests'",
+    "clean": "rm -rf cypress/screenshots cypress/videos cypress/downloads",
+    "setup": "npm install && npm run generate:tests"
+  },
+  "keywords": [
+    "confidios",
+    "blockchain",
+    "qa-automation",
+    "cypress",
+    "test-flagging",
+    "azure-devops",
+    "api-testing",
+    "self-sovereign-data"
+  ],
+  "author": "Mike Olab",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "fs-extra": "^11.0.0",
+    "glob": "^10.0.0",
+    "chalk": "^4.1.0",
+    "commander": "^11.0.0",
+    "chokidar": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mikeolab/mike-qa-automation-portfolio.git",
+    "directory": "projects/confidios-blockchain"
+  },
+  "bugs": {
+    "url": "https://github.com/Mikeolab/mike-qa-automation-portfolio/issues"
+  },
+  "homepage": "https://github.com/Mikeolab/mike-qa-automation-portfolio#readme"
+}
