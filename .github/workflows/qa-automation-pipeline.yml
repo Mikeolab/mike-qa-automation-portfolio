@@ -70,13 +70,16 @@ jobs:
             echo "Installing TCall e2e dependencies..."
             npm install || echo "Dependencies installation completed with warnings"
             if [ "${{ matrix.browser }}" = "chrome" ]; then
-              echo "📋 TCALL STAGING TESTS - All endpoints and admin workflows"
+              echo "📋 TCALL STAGING TESTS - API endpoints + Admin workflows"
+              echo "🌐 Environment: https://api.staging.tcall.ai:8006"
               npm run test:staging || echo "⚠️ TCall staging tests completed with warnings"
             elif [ "${{ matrix.browser }}" = "firefox" ]; then
-              echo "📋 TCALL PRODUCTION TESTS - All endpoints and admin workflows"
+              echo "📋 TCALL PRODUCTION TESTS - API endpoints + Admin workflows"
+              echo "🌐 Environment: https://api.tcall.ai:8006"
               npm run test:prod || echo "⚠️ TCall production tests completed with warnings"
             else
-              echo "📋 TCALL COMPREHENSIVE TESTS - All endpoints and admin workflows"
+              echo "📋 TCALL COMPREHENSIVE TESTS - All endpoints + Admin workflows"
+              echo "🌐 Environment: https://api.dev.tcall.ai:8006"
               npm run test:comprehensive || echo "⚠️ TCall comprehensive tests completed with warnings"
             fi
           elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then

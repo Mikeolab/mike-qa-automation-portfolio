@@ -6,7 +6,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     // Base URL for different environments
-    baseUrl: "https://test.tcall.ai",
+    baseUrl: "https://api.dev.tcall.ai:8006",
     supportFile: "cypress/support/e2e.js",
     
     // Enhanced configuration for comprehensive testing
@@ -33,7 +33,7 @@ module.exports = defineConfig({
       TEST_PASSWORD: process.env.CYPRESS_TEST_PASSWORD || "test123",
       ADMIN_EMAIL: process.env.CYPRESS_ADMIN_EMAIL || "admin@tcall.ai",
       ADMIN_PASSWORD: process.env.CYPRESS_ADMIN_PASSWORD || "admin123",
-      BASE_URL: process.env.CYPRESS_BASE_URL || "https://test.tcall.ai",
+      BASE_URL: process.env.CYPRESS_BASE_URL || "https://api.dev.tcall.ai:8006",
       ENVIRONMENT: process.env.CYPRESS_ENVIRONMENT || "dev"
     },
     
@@ -51,16 +51,16 @@ module.exports = defineConfig({
       // Set base URL based on environment
       switch (environment) {
         case 'staging':
-          config.baseUrl = 'https://test.tcall.ai';
-          console.log('🚀 RUNNING TCall STAGING TESTS - https://test.tcall.ai');
+          config.baseUrl = 'https://api.staging.tcall.ai:8006';
+          console.log('🚀 RUNNING TCall STAGING TESTS - https://api.staging.tcall.ai:8006');
           break;
         case 'production':
-          config.baseUrl = 'https://app.tcall.ai';
-          console.log('🚀 RUNNING TCall PRODUCTION TESTS - https://app.tcall.ai');
+          config.baseUrl = 'https://api.tcall.ai:8006';
+          console.log('🚀 RUNNING TCall PRODUCTION TESTS - https://api.tcall.ai:8006');
           break;
         default:
-          config.baseUrl = 'https://test.tcall.ai';
-          console.log('🚀 RUNNING TCall DEV TESTS - https://test.tcall.ai');
+          config.baseUrl = 'https://api.dev.tcall.ai:8006';
+          console.log('🚀 RUNNING TCall DEV TESTS - https://api.dev.tcall.ai:8006');
       }
       
       // Add custom tasks for test data management
