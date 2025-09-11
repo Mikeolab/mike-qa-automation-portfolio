@@ -6,7 +6,7 @@ A comprehensive showcase of real-world QA automation projects across healthcare,
 
 ## 🎯 About Me
 
-I'm a Senior QA Automation Engineer with 5+ years of experience building production-ready testing solutions. I specialize in solving complex technical challenges and delivering commercial-grade applications that actually work.
+I'm a Senior QA Automation Engineer with years of experience building production-ready testing solutions. I specialize in solving complex technical challenges and delivering commercial-grade applications that actually work.
 
 **What I Do:**
 - 🛠️ **Build Real Solutions**: Custom automation frameworks that solve actual business problems
@@ -155,8 +155,8 @@ mike-qa-automation-portfolio/
 
 I'm always interested in discussing QA automation challenges, technical solutions, and new opportunities.
 
-- **LinkedIn**: [Connect with me on LinkedIn](https://linkedin.com/in/mikeolab)
-- **Email**: mike.olab@email.com
+- **LinkedIn**: [Connect with me on LinkedIn](http://linkedin.com/in/olowolabi-akinwale-michael-84353432a)
+- **Email**: olowolabiakinwale@gmail.com
 - **GitHub**: [View my other projects](https://github.com/Mikeolab)
 
 **Available for:**
