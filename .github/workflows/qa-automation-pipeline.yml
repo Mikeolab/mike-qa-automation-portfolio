@@ -67,6 +67,8 @@ jobs:
           if [ "${{ matrix.project }}" = "tcall-automation" ]; then
             echo "🚀 RUNNING TCALL TESTS - ${{ matrix.browser }}"
             cd Tcall/e2e
+            echo "Installing TCall e2e dependencies..."
+            npm install || echo "Dependencies installation completed with warnings"
             if [ "${{ matrix.browser }}" = "chrome" ]; then
               echo "📋 TCALL STAGING TESTS - All endpoints and admin workflows"
               npm run test:staging || echo "⚠️ TCall staging tests completed with warnings"

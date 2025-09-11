@@ -101,15 +101,8 @@ module.exports = defineConfig({
     }
   },
   
-  // Reporter configuration
-  reporter: 'cypress-multi-reporters',
-  reporterOptions: {
-    reporterEnabled: 'spec, mocha-junit-reporter',
-    mochaJunitReporterReporterOptions: {
-      mochaFile: 'cypress/results/results-[hash].xml',
-      toConsole: true
-    }
-  },
+  // Reporter configuration - simplified
+  reporter: 'spec',
   
   // Performance monitoring
   experimentalModifyObstructiveThirdPartyCode: true,
