@@ -65,19 +65,23 @@ jobs:
         run: |
           cd projects/${{ matrix.project }}
           if [ "${{ matrix.project }}" = "tcall-automation" ]; then
-            echo "Running TCall comprehensive tests..."
+            echo "🚀 RUNNING TCALL TESTS - ${{ matrix.browser }}"
             cd Tcall/e2e
             if [ "${{ matrix.browser }}" = "chrome" ]; then
-              npm run test:staging || echo "TCall staging tests completed with warnings"
+              echo "📋 TCALL STAGING TESTS - All endpoints and admin workflows"
+              npm run test:staging || echo "⚠️ TCall staging tests completed with warnings"
             elif [ "${{ matrix.browser }}" = "firefox" ]; then
-              npm run test:prod || echo "TCall production tests completed with warnings"
+              echo "📋 TCALL PRODUCTION TESTS - All endpoints and admin workflows"
+              npm run test:prod || echo "⚠️ TCall production tests completed with warnings"
             else
-              npm run test:comprehensive || echo "TCall comprehensive tests completed with warnings"
+              echo "📋 TCALL COMPREHENSIVE TESTS - All endpoints and admin workflows"
+              npm run test:comprehensive || echo "⚠️ TCall comprehensive tests completed with warnings"
             fi
           elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then
-            echo "Running Medcor comprehensive tests..."
+            echo "🚀 RUNNING MEDCOR TESTS - ${{ matrix.browser }}"
+            echo "📋 MEDCOR STAGING TESTS - All dashboards, endpoints, and admin workflows"
             cd "Medcor Automation"
-            npm run test:all || echo "Medcor tests completed with warnings"
+            npm run test:all || echo "⚠️ Medcor tests completed with warnings"
           else
             echo "Running basic tests for ${{ matrix.project }}"
             npm test || echo "Tests completed with warnings"
