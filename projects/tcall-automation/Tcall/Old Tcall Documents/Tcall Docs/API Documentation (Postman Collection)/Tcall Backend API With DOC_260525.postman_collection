@@ -2316,7 +2316,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Something want to wrong while purchase a number: \\n\\u001b[31m\\u001b[49mHTTP Error\\u001b[0m \\u001b[37m\\u001b[49mYour request was:\\u001b[0m\\n\\n\\u001b[36m\\u001b[49mPOST /Accounts/ACa490619875de1f891fc5de2011064a7c/IncomingPhoneNumbers.json\\u001b[0m\\n\\n\\u001b[37m\\u001b[49mTwilio returned the following information:\\u001b[0m\\n\\n\\u001b[34m\\u001b[49mUnable to create record: Trial accounts are allowed only one Twilio number. To purchase additional numbers, please upgrade your account.\\u001b[0m\\n\\n\\u001b[37m\\u001b[49mMore information may be available here:\\u001b[0m\\n\\n\\u001b[34m\\u001b[49mhttps://www.twilio.com/docs/errors/21404\\u001b[0m\\n\\n\",\n    \"data\": null\n}"
+							"body": "{\n    \"statusCode\": 400,\n    \"message\": \"Something want to wrong while purchase a number: \\n\\u001b[31m\\u001b[49mHTTP Error\\u001b[0m \\u001b[37m\\u001b[49mYour request was:\\u001b[0m\\n\\n\\u001b[36m\\u001b[49mPOST /Accounts/AC***REDACTED***/IncomingPhoneNumbers.json\\u001b[0m\\n\\n\\u001b[37m\\u001b[49mTwilio returned the following information:\\u001b[0m\\n\\n\\u001b[34m\\u001b[49mUnable to create record: Trial accounts are allowed only one Twilio number. To purchase additional numbers, please upgrade your account.\\u001b[0m\\n\\n\\u001b[37m\\u001b[49mMore information may be available here:\\u001b[0m\\n\\n\\u001b[34m\\u001b[49mhttps://www.twilio.com/docs/errors/21404\\u001b[0m\\n\\n\",\n    \"data\": null\n}"
 						},
 						{
 							"name": "Purchased a number",
@@ -9415,7 +9415,7 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "sk_test_51Q2BApP4pCg74tiLTR42xW7IKgiVimlmHYXQp8R9S44qyRzKEHOG6p9CBgdKpSi4sNi6HXlqCcTXlbUPD0r7pXcV00NcWYaSuO",
+									"value": "sk_test_***REDACTED***",
 									"type": "string"
 								}
 							]
@@ -9603,7 +9603,7 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "sk_test_51Q2BApP4pCg74tiLTR42xW7IKgiVimlmHYXQp8R9S44qyRzKEHOG6p9CBgdKpSi4sNi6HXlqCcTXlbUPD0r7pXcV00NcWYaSuO",
+									"value": "sk_test_***REDACTED***",
 									"type": "string"
 								}
 							]
@@ -9774,7 +9774,7 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "sk_test_51Q2BApP4pCg74tiLTR42xW7IKgiVimlmHYXQp8R9S44qyRzKEHOG6p9CBgdKpSi4sNi6HXlqCcTXlbUPD0r7pXcV00NcWYaSuO",
+									"value": "sk_test_***REDACTED***",
 									"type": "string"
 								},
 								{

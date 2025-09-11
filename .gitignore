@@ -1,4 +1,22 @@
 
+# Environment files with secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.dev
+.env.staging
+.env.prod
+*.env
+
+# API Keys and Secrets
+*secret*
+*key*
+*credential*
+*password*
+*token*
+
 # Large video files (too big for GitHub)
 *.mp4
 *.mov
