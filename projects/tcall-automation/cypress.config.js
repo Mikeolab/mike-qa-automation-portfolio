@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://medcor-test.example.com",
+    baseUrl: "https://test.tcall.ai",
     supportFile: "cypress/support/e2e.js",
     specPattern: "cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
     video: false,
@@ -15,9 +15,8 @@ module.exports = defineConfig({
     viewportHeight: 720
   },
   env: {
-    TEST_EMAIL: process.env.CYPRESS_TEST_EMAIL || "test@medcor.com",
-    TEST_PASSWORD: process.env.CYPRESS_TEST_PASSWORD || "testpassword",
-    API_BASE_URL: process.env.CYPRESS_API_BASE_URL || "https://api.medcor-test.example.com"
+    TEST_EMAIL: process.env.CYPRESS_TEST_EMAIL || "test@example.com",
+    TEST_PASSWORD: process.env.CYPRESS_TEST_PASSWORD || "testpassword"
   },
   retries: {
     runMode: 2,
