@@ -67,11 +67,17 @@ jobs:
           if [ "${{ matrix.project }}" = "tcall-automation" ]; then
             echo "Running TCall comprehensive tests..."
             cd Tcall/e2e
-            npm test || echo "TCall tests completed with warnings"
+            if [ "${{ matrix.browser }}" = "chrome" ]; then
+              npm run test:staging || echo "TCall staging tests completed with warnings"
+            elif [ "${{ matrix.browser }}" = "firefox" ]; then
+              npm run test:prod || echo "TCall production tests completed with warnings"
+            else
+              npm run test:comprehensive || echo "TCall comprehensive tests completed with warnings"
+            fi
           elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then
             echo "Running Medcor comprehensive tests..."
             cd "Medcor Automation"
-            npm test || echo "Medcor tests completed with warnings"
+            npm run test:all || echo "Medcor tests completed with warnings"
           else
             echo "Running basic tests for ${{ matrix.project }}"
             npm test || echo "Tests completed with warnings"
@@ -83,9 +89,12 @@ jobs:
         with:
           name: test-results-${{ matrix.project }}-${{ matrix.browser }}
           path: |
-            projects/${{ matrix.project }}/cypress/results/
-            projects/${{ matrix.project }}/cypress/screenshots/
-            projects/${{ matrix.project }}/cypress/videos/
+            projects/${{ matrix.project }}/Tcall/e2e/cypress/results/
+            projects/${{ matrix.project }}/Tcall/e2e/cypress/screenshots/
+            projects/${{ matrix.project }}/Tcall/e2e/cypress/videos/
+            projects/${{ matrix.project }}/Medcor Automation/cypress/results/
+            projects/${{ matrix.project }}/Medcor Automation/cypress/screenshots/
+            projects/${{ matrix.project }}/Medcor Automation/cypress/videos/
 
   # 🔒 Security Testing
   security-testing:
