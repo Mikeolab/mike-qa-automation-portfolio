@@ -1,0 +1,38 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "cypress"
+  ],
+  "rules": {
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-console": "off",
+    "cypress/no-unnecessary-waiting": "warn"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    "cypress/videos/",
+    "cypress/screenshots/",
+    "cypress/downloads/",
+    "*.min.js",
+    "Tcall/",
+    "Old Tcall Documents/"
+  ]
+}
