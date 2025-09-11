@@ -265,14 +265,6 @@ jobs:
           echo "Deploying to production environment..."
           # Add your deployment commands here
 
-      - name: 🔔 Notify Deployment
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          channel: '#qa-automation'
-          webhook_url: ${{ secrets.SLACK_WEBHOOK }}
-        if: always()
-
   # 🧹 Cleanup
   cleanup:
     name: 🧹 Cleanup
