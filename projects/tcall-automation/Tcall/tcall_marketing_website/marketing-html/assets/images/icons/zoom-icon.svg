@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 41" width="40" height="41">
+	<title>Zoom Icon 1 (1)</title>
+	<defs>
+		<image  width="40" height="41" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAApCAMAAABwfJv6AAAAAXNSR0IB2cksfwAAAIdQTFRFAAAAAID/AIf/AIv/AIv/AIz/AI3/AIz/AIr/AIz/AI3/AI3/AI3/AIz/AI//AI3/AIz/AIv/f8b/n9T/j83/IJv/EJP/QKn/v+P/////f8X/3/H/gMX/QKj/j8z/AIz/YLf/AIz/AIv/AIz/cL7/AI3/r9v/IJr/AIn/gMb/oNT/MKL/AIz/yXTlBQAAAC10Uk5TABAgQHCv7/9gv9+Pf88Qn++A/////////////////1D/kKCf/2D//1D///+gozxt8gAAAYBJREFUeJy11VtPwjAUAOBzujEGRAavBMPF+Ob//zNqJCaK0RgQhsyNtfZ0ZWwr3fDB87CW8uV0vQ6hGogIQgijufzLIUYhhBNzG3S80l/ARHQOVplqi7gBeweDUbTCMkTfTJeFt+MFyPzU4vLuFcSO3cmcuDnCIKpxAP6Xhr4xu5VIDwrWvWAWHb4h2NAxRXclIWs1OkqJ+g17lUVXI5UR4DpLiXAVU21YhpJ+0nPg4geVbI+6ZwOC+w6Bn4CjILRx8maB7eXAlWuiIeLw2wY3bSo0HOH8xQYjLMAxdvhFkP0DvPgdZ6826O4KsIu3z6oy2RpwOQ1P8zjD/o+qXO9MCDBfH2GCoEdzszoDYRpma+1tEfTSwKCy3YIHVUwX9EQ5sj7bV3s1I+FysMeUNTF+pKPQnJKONk2f6zRAjPS5vrtv6ljDvohrnBcK+OvdI3MmttuMRdk9ku8FyySNnnTltGnOdc/ivK24u3zkNlb9KjAvzb8KIi1dcsZ+tX1nfgH+mIT9Zz/IUQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Background" href="#img1" x="0" y="0"/>
+</svg>

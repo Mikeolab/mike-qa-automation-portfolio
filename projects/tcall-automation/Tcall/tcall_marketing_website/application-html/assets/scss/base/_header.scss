@@ -1,0 +1,109 @@
+@use "../abstracts/media-query";
+@use "../abstracts/functions";
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+@use "../abstracts/z-index";
+
+.o-header {
+	$o-header: &;
+
+	position: relative;
+	// top: functions.torem(35px);
+	// right: 0;
+	// left: 0;
+	z-index: 9;
+	width: 100%;
+	padding: functions.torem(20px) 0;
+	&__logo{
+		width: functions.torem(160px);
+		display: block;
+		margin: auto;
+		@include media-query.breakpoint(smallg) {
+			width: auto;
+			margin: 0;
+		}
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 0px;
+		@include media-query.breakpoint(small) {
+			padding: 0 15px;
+		}
+	}
+
+	&__left-column {
+		width: 100%;
+		flex: 0 0 auto;
+		@include media-query.breakpoint(smallg) {
+			width: 25%;
+		}
+	}
+
+	&__right-column {
+		width: 100%;
+		flex: 0 0 auto;
+		@include media-query.breakpoint(smallg) {
+			width: 75%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+	}
+
+	&__user{
+		position: absolute;
+		right: functions.torem(15px);
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-left: functions.torem(40px);
+		i{
+			width: functions.torem(35px);
+			height: functions.torem(35px);
+			display: block;
+			border-radius: 50%;
+			overflow: hidden;
+		}
+		@include media-query.breakpoint(smallg) {
+			position: relative;
+			right: inherit;
+			top: inherit;
+		}
+	}
+	&__userarrow{
+		margin-left: functions.torem(20px);
+		&--active{
+			transform: rotate(180deg);
+		}
+	}
+
+	&__usermenu{
+		position: absolute;
+		background-color: #fff;
+		top: functions.torem(60px);
+		width: functions.torem(180px);
+		border-radius: functions.torem(7px);
+		padding: functions.torem(12px);
+		right: 0;
+		display: none;
+		&--active{
+			display: block;
+		}
+		li{
+			margin: functions.torem(3px) 0;
+			text-align: center;
+		}
+		a{
+			padding: 0 functions.torem(5px);
+			font-size: functions.torem(14px);
+			color: colors.$black;
+			line-height: normal;
+			&:hover{
+				color: #768BBD;
+			}
+		}
+	}
+}

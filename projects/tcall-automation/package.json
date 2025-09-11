@@ -1,0 +1,56 @@
+{
+  "name": "tcall-automation",
+  "version": "1.0.0",
+  "description": "TCall automation suite with custom webhook proxy solution",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:parallel": "cypress run --parallel --record",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "type-check": "tsc --noEmit",
+    "report": "mochawesome-merge cypress/results/*.json -o cypress/results/merged-report.json && marge cypress/results/merged-report.json --reportDir cypress/reports --inline",
+    "clean": "rm -rf cypress/results cypress/screenshots cypress/videos cypress/reports",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "webhook:start": "node webhook-proxy/server.js",
+    "webhook:dev": "nodemon webhook-proxy/server.js"
+  },
+  "keywords": [
+    "tcall",
+    "webhook",
+    "cypress",
+    "automation",
+    "retell",
+    "telecommunications"
+  ],
+  "author": "Mike",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "mochawesome": "^7.0.0",
+    "mochawesome-merge": "^4.0.0",
+    "marge": "^4.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "dotenv": "^16.0.0",
+    "axios": "^1.4.0",
+    "ws": "^8.13.0",
+    "pg": "^8.11.0",
+    "nodemon": "^3.0.0"
+  }
+}

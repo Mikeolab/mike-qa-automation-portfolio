@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 22" width="28" height="22">
+	<title>hamburg-svg</title>
+	<defs>
+		<image  width="30" height="2" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAACAgMAAAAySoTRAAAAAXNSR0IB2cksfwAAAAlQTFRF////////////jkrl/gAAAAN0Uk5TAH+Av2kixwAAABRJREFUeJxjFHVgAIHXjFoNYMY1ABRmAsPpHl9sAAAAAElFTkSuQmCC"/>
+		<image  width="30" height="2" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAACAgMAAAAySoTRAAAAAXNSR0IB2cksfwAAAAlQTFRF////////////jkrl/gAAAAN0Uk5TAH+Av2kixwAAABRJREFUeJxjFHVgAIHXjFoNYMY1ABRmAsPpHl9sAAAAAElFTkSuQmCC"/>
+		<image  width="30" height="2" id="img3" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAACAgMAAAAySoTRAAAAAXNSR0IB2cksfwAAAAlQTFRF////////////jkrl/gAAAAN0Uk5TAH+Av2kixwAAABRJREFUeJxjFHVgAIHXjFoNYMY1ABRmAsPpHl9sAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+	</style>
+	<use  href="#img1" x="-1" y="0"/>
+	<use  href="#img2" x="-1" y="10"/>
+	<use  href="#img3" x="-1" y="20"/>
+</svg>

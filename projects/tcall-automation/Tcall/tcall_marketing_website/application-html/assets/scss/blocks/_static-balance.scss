@@ -1,0 +1,250 @@
+@use "../abstracts/media-query";
+@use "../abstracts/functions";
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+@use "../abstracts/z-index";
+
+
+.bg-dashboard {
+    font-family: Lato, sans-serif;
+    position: relative;
+    background: #fff;
+    background: linear-gradient(0deg, #bed4e9 0, #fff 100%);
+    &:before{
+        position: absolute;
+        content: "";
+        width: 467px;
+        height: 467px;
+        border-radius: 50%;
+        background: #fff;
+        background: radial-gradient(circle, #bed4e9 0, rgba(190, 212, 233, .5) 40%, rgba(190, 212, 233, .05) 60%, rgba(255, 255, 255, 0) 100%);
+        left: -10%;
+        top: -30%;
+        display: none;
+        @include media-query.breakpoint(smallg) {
+            display: block;
+        }
+    }
+}
+
+.static-balance{
+    padding: 15px;
+    border-radius: 30px;
+    background: #3992e4;
+    background: linear-gradient(0deg, #3992e4 0, #0b3c87 100%);
+    border: 2px solid #fff;
+    max-width: 798px;
+    width: 100%;
+    position: relative;
+    border-radius: 20px;
+    @include media-query.breakpoint(ipad) {
+        padding: 30px 45px;
+        min-height: 470px;
+        max-height: 600px;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #3992e4; 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #0b3c87; 
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: #0b3c87; 
+    }
+    &__headtab{
+        display: block;
+        margin-bottom: 30px;
+    }
+    &__title{
+        font-size: 24px;
+        line-height: 28px;
+        margin: 0;
+        color: #fff;
+    }
+    &__purchaseplan{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 40px;
+    }
+    &__plandetails{
+        width: 100%;
+        padding: 0 0 15px;
+        margin: 0 0 15px;
+        margin-bottom: 1px solid #fff;
+        @include media-query.breakpoint(smallg) {
+            display: flex;
+            width: 40%;
+            margin: 0;
+            padding: 0;
+            border-right: 1px solid #fff;
+        }
+    }
+    &__planaccount{
+        width: 100%;
+        padding-left: 0;
+        @include media-query.breakpoint(smallg) {
+            display: flex;
+            width: 60%;
+            padding-left: 30px;
+        }
+    }
+    &__labelwrap{
+        margin-bottom: 15px;
+        @include media-query.breakpoint(smallg) {
+            margin-bottom: 0;
+            margin-right: 30px;
+            display: inline-flex;
+            flex-direction: column;
+        }
+    }
+    &__label{
+        font-size: 14px;
+        color: #fff !important;
+        line-height: 17px;
+        margin-bottom: 5px !important;
+    }
+    &__labelvalue{
+        font-size: 16px;
+        color: #fff;
+        line-height: 20px;
+        margin: 0;
+    }
+    &__labelnumber{
+        font-size: 26px;
+        line-height: 31px;
+        color: #fff;
+        margin: 0;
+    }
+    &__addbalance{
+        max-width: 175px;
+        width: 100%;
+        height: 50px;
+        border-radius: 106px;
+        border: 2px solid #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+        &:hover{
+            background-color: #fff;
+            color: #0126a3;
+        }
+    }
+    &__boundcall{
+        background-color: #bed4e9;
+        border-radius: 20px;
+        padding: 30px;
+        margin-top: 5px;
+    }
+    &__boundwrap{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    &__svgtitle{
+        flex: 0 0 40px;
+    }
+    &__titlecontent{
+        flex: 1;
+    }
+    &__contentheading{
+        font-size: 20px;
+        line-height: 24px;
+        color: #000;
+        margin: 0 0 15px;
+    }
+    &__contentlist{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__listpart{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        padding: 3px 0;
+        margin: 2px 0;
+        border-bottom:1px solid #0052b4;;
+        @include media-query.breakpoint(smallg) {
+            width: 33%;
+            border-bottom: 0;
+            border-right: 1px solid #0052b4;
+        }
+        &:first-child{
+            @include media-query.breakpoint(smallg) {
+                justify-content: flex-start;
+            }
+        }
+        &:last-child{
+            border-bottom: 0;
+            border-right: 0;
+            @include media-query.breakpoint(smallg) {
+                justify-content: flex-end;
+            }
+        }
+        &:nth-child(3n+3){
+            border-bottom: 0;
+            border-right: 0;
+            @include media-query.breakpoint(smallg) {
+                justify-content: flex-end;
+            }
+        }
+    }
+    &__partlabel{
+        max-width: 109px;
+        width: auto;
+        color: #1a82ea !important;
+        font-size: 16px !important;
+        line-height: normal !important;
+    }
+    &__partcontent{
+        font-size: 16px;
+        color: #000;
+        margin: 0;
+    }
+    &__backbtn{
+        border: 1px solid #0b3c87;
+        padding: 7px;
+        color: #0b3c87;
+        background: 0 0;
+        font-size: 14px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: inline-flex;
+        border-radius: 50px;
+        width: 100%;
+        max-width: 155px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s all ease-in-out;
+        svg{
+            path{
+                stroke: #0b3c87;
+            }
+        }
+        &:hover{
+            background-color: #0b3c87;
+            color: #fff;
+            svg{
+                path{
+                    stroke: #fff;
+                }
+            }
+        }
+    }
+}

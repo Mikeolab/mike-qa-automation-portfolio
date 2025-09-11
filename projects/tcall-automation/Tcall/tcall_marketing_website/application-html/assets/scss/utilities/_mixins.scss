@@ -1,0 +1,115 @@
+// @include transition(all, 2s, ease-out);
+@mixin transition($what: all, $time: 0.3s, $how: ease-in-out) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+// @include boxshadow(0px, 0px, 0px, 0px, #000);
+@mixin boxshadow($x: 0px, $y: 0px, $blur: 0px, $spread: 0px, $color: #000) {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow:    $x $y $blur $color;
+    -ms-box-shadow:     $x $y $blur $color;
+    -o-box-shadow:      $x $y $blur $color;
+    box-shadow:         $x $y $blur $color;
+}
+
+// @include transform(rotate(0deg));
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -moz-transform:    $val;
+  -ms-transform:     $val;
+  -o-transform:      $val;
+  transform:         $val;
+}
+
+// @include animation(pulse 3s linear infinite);
+@mixin animation($val) {
+  -webkit-animation: pulse 3s linear  infinite;
+  -moz-animation: pulse 3s linear  infinite;
+  -ms-animation: pulse 3s linear  infinite;
+  -o-animation: pulse 3s linear  infinite;
+  animation: pulse 3s linear infinite;
+}
+
+// @include borderradius(0px 0px 0px 0px);
+@mixin borderradius($val) {
+    -webkit-border-radius: $val;
+    -moz-border-radius:    $val;
+    -ms-border-radius:     $val;
+    -o-border-radius:      $val;
+    border-radius:         $val;
+}
+
+// @include border-radii($topleft, $topright, $bottomright, $bottomleft);
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+}
+
+// @include size(200px);
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// @include flexbox;
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+
+//@include orientation(landscape) {}
+@mixin orientation($direction) { 
+  $orientation-landscape: "(orientation:landscape)"; 
+  $orientation-portrait: "(orientation:portrait)";
+
+  @if $direction == landscape {
+    @media #{$orientation-landscape} { @content; } 
+  }
+  @if $direction == portrait {
+    @media #{$orientation-portrait} { @content; } 
+  }
+}
+
+
+//@include placeholder
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

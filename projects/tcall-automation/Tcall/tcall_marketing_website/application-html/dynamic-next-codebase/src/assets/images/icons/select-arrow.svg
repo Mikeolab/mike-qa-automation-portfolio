@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 8" width="14" height="8">
+	<title>select-arrow-svg</title>
+	<defs>
+		<image  width="14" height="8" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAIBAMAAAA7P9P/AAAAAXNSR0IB2cksfwAAACRQTFRF////////////////////////////////////////////////1XexywAAAAx0Uk5Tz9QZANX/2hfd3tnYj+l1gQAAAEhJREFUeJxjZFQSYGD4z88o6nuRgeGzFmPFA+kDLH5MjOZ+TGtcH0gzGrs+kOdjWsNo/N/YZO9ZAUZjhs/6vBcZgPT/ygoBBgAtIxJgK0+V3AAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use  href="#img1" x="0" y="0"/>
+</svg>

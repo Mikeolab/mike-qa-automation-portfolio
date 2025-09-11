@@ -1,0 +1,372 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+.o-main-wrapper{
+  overflow: hidden;
+}
+.animated-wrapper {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html,
+body,
+p {
+  font-family: "Lato", sans-serif;
+  font-family: $main-font;
+  font-size: toRem(16px);
+  font-weight: 400;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+ul {
+  li {
+    font-family: "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin: 0 0 30px;
+  color: $black;
+  font-weight: 400;
+}
+h1,
+.h1 {
+  font-size: toRem(35px);
+}
+h2,
+.h2 {
+  font-size: toRem(30px);
+}
+h3,
+.h3 {
+  font-size: toRem(25px);
+}
+h4,
+.h4 {
+  font-size: toRem(22px);
+}
+h5,
+.h5 {
+  font-size: toRem(20px);
+}
+h6,
+.h6 {
+  font-size: toRem(18px);
+}
+a,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+svg,
+input[type="text"],
+input[type="search"],
+input[type="file"],
+input[type="time"],
+input[type="date"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+textarea,
+select {
+  font-family: "Lato", sans-serif;
+  @include transition(all, 0.5s, ease-out);
+  -webkit-font-smoothing: antialiased;
+}
+input,
+button {
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+a,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  @include transition(all, 0.5s, ease-out);
+}
+button{
+  border: none;
+  cursor: pointer;
+}
+input,
+button {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+a {
+  color: $primary-color;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+form{
+  width: 100%;
+}
+p {
+  font-family: "Lato", sans-serif;
+  margin: 0 0 30px;
+  line-height: 19px;
+}
+
+.overlay {
+  position: relative;
+  &--fullwhite {
+    &:after {
+      background: rgba($color: $white, $alpha: 0.9);
+    }
+  }
+  &--fullBlack {
+    &:after {
+      background: -moz-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#d9000000',GradientType=0 );
+    }
+  }
+}
+.font100 {
+  font-weight: 100;
+}
+.font300 {
+  font-weight: 300;
+}
+.font400 {
+  font-weight: 400;
+}
+.font500 {
+  font-weight: 500;
+}
+.font700 {
+  font-weight: 700;
+}
+.font900 {
+  font-weight: 900;
+}
+.clear {
+  width: 100%;
+  float: left;
+}
+
+.alignMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-commonSection {
+  padding: 55px 0;
+}
+.slick-slide {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.colorWhite {
+  color: $white;
+}
+
+.columns {
+  &-md {
+    &-4 {
+      -moz-column-count: 4;
+      -webkit-column-count: 4;
+      column-count: 4;
+    }
+  }
+}
+
+.background-image {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.form-controls {
+  width: 100%;
+  background-color: $white;
+  height: 64px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-family: $main-font;
+  font-size: 14px;
+  line-height: 21px;
+  color: $dark-font-color;
+  margin-bottom: 15px;
+  @include responsive(tab) {
+    // width: 49%;
+    // margin-bottom: 0;
+  }
+
+  &__textarea {
+    width: 100%;
+    height: 102px;
+    resize: none;
+    padding: 20px;
+  }
+
+  &__select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../images/icons/select-arrow.svg) 92% / 15% no-repeat #fff;
+    background-size: 14px;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &::placeholder {
+    color: $dark-font-color;
+    opacity: 1;
+    font-weight: $font-weight--medium;
+  }
+
+  &::-ms-input-placeholder {
+    color: $dark-font-color;
+    font-weight: $font-weight--medium;
+  }
+}
+
+.custom-choices-container {
+    &:after {
+        display: none;
+    }
+  .choices__inner {
+    display: flex;
+    align-items: center;
+    font-family: $main-font;
+    color: $dark-font-color;
+    font-size: 14px;
+    border-radius: 10px;
+    line-height: 21px;
+    background-color: $white;
+    height: 64px;
+    padding: 10px 20px;
+    border: none;
+    background: url(../images/icons/select-arrow.svg) 92% / 15% no-repeat #fff;
+    background-size: 14px;
+    &:focus-visible {
+      outline: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+    .choices__list--single {
+        padding: 0px 20px 0px 0px;
+        .choices__placeholder {
+            font-family: $main-font;
+            color: $dark-font-color;
+            font-size: 14px;
+            opacity: 1;
+            font-weight: $font-weight--medium;
+        }
+    }
+  }
+}
+
+// .error-message {
+//     background-color: red;
+//     padding: 10px;
+//     border-radius: 10px;
+//     margin-bottom: 10px;
+// }
+
+.hidden {
+	display: none !important;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.js-modal-open {
+  overflow: hidden;
+}
+input[type="number"]{
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  appearance: none;
+}

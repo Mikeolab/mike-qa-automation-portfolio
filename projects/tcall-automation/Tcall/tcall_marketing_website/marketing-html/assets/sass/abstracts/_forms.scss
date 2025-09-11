@@ -1,0 +1,47 @@
+@use "colors";
+@use "media-query";
+@use "functions";
+@use "shadows";
+@use "animations";
+@use "fonts";
+@use "border-radius";
+
+input {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: functions.torem(20px);
+	padding: 17px;
+	color: colors.$black-1;
+	background-color: colors.$white;
+	border: 0;
+	border-radius: border-radius.$border-radius--box;
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+select {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: functions.torem(20px);
+	padding: 17px;
+	color: colors.$black-1;
+	background: url(../images/icons/down-black-arrow.svg) no-repeat 95% 50% #FFF;
+	background-color: colors.$white;
+	border: 0;
+	border-radius: border-radius.$border-radius--box;
+	appearance: none;
+	
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+textarea {
+	border: 0;
+
+	&:focus-visible {
+		outline: none;
+	}
+}

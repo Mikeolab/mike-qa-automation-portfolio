@@ -1,0 +1,19 @@
+@use "../abstracts/_spacing.scss";
+@use "../abstracts/media-query";
+
+.o-container {
+	$o-container: &;
+
+	position: relative;
+	@include spacing.site-width;
+	@include spacing.site-padding;
+	&--fluid{
+		max-width: 100%;
+	}
+}
+
+.holder-wrapper {
+	@include spacing.wrapper-width;
+	position: relative;
+	margin: 0 auto;
+}

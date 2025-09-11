@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+//  Import stylesheet here
+@use "./abstracts/__abstracts-dir";
+@use "./base/__base-dir";
+@use "./blocks/__blocks-dir";
+@use "./component/__component-dir";
+// @import 'utilities/functions';
+// @import 'utilities/mixins';
+// @import 'base/reset';
+// @import 'base/variable';
+// @import 'base/common';
+// @import 'component/button';
+// @import 'component/accordian';
+// @import 'base/header';
+// @import 'base/footer';
+
+// @import 'blocks/login';
+// @import 'blocks/dashboard';
+// @import 'blocks/agent';
+// @import 'blocks/general-dashboard';
+// @import 'blocks/chatbot';

@@ -1,0 +1,124 @@
+{
+  "name": "mike-qa-automation-portfolio",
+  "version": "1.0.0",
+  "description": "Comprehensive QA automation portfolio showcasing advanced testing solutions across multiple industries",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install && npm run install:tcall && npm run install:medcor && npm run install:shared",
+    "install:tcall": "cd projects/tcall-automation && npm install",
+    "install:medcor": "cd projects/medcor-healthcare && npm install",
+    "install:shared": "cd projects/shared-framework && npm install",
+    "test:all": "npm run test:tcall && npm run test:medcor && npm run test:shared",
+    "test:tcall": "cd projects/tcall-automation && npm run test",
+    "test:medcor": "cd projects/medcor-healthcare && npm run test",
+    "test:shared": "cd projects/shared-framework && npm run test",
+    "test:tcall:headed": "cd projects/tcall-automation && npm run test:headed",
+    "test:medcor:headed": "cd projects/medcor-healthcare && npm run test:headed",
+    "test:shared:headed": "cd projects/shared-framework && npm run test:headed",
+    "build:all": "npm run build:tcall && npm run build:medcor && npm run build:shared",
+    "build:tcall": "cd projects/tcall-automation && npm run build",
+    "build:medcor": "cd projects/medcor-healthcare && npm run build",
+    "build:shared": "cd projects/shared-framework && npm run build",
+    "lint:all": "npm run lint:tcall && npm run lint:medcor && npm run lint:shared",
+    "lint:tcall": "cd projects/tcall-automation && npm run lint",
+    "lint:medcor": "cd projects/medcor-healthcare && npm run lint",
+    "lint:shared": "cd projects/shared-framework && npm run lint",
+    "type-check:all": "npm run type-check:tcall && npm run type-check:medcor && npm run type-check:shared",
+    "type-check:tcall": "cd projects/tcall-automation && npm run type-check",
+    "type-check:medcor": "cd projects/medcor-healthcare && npm run type-check",
+    "type-check:shared": "cd projects/shared-framework && npm run type-check",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "docker:tcall": "cd projects/tcall-automation && docker-compose up -d",
+    "docker:medcor": "cd projects/medcor-healthcare && docker-compose up -d",
+    "docker:shared": "cd projects/shared-framework && docker-compose up -d",
+    "ci:all": "npm run lint:all && npm run type-check:all && npm run test:all",
+    "ci:tcall": "npm run lint:tcall && npm run type-check:tcall && npm run test:tcall",
+    "ci:medcor": "npm run lint:medcor && npm run type-check:medcor && npm run test:medcor",
+    "ci:shared": "npm run lint:shared && npm run type-check:shared && npm run test:shared",
+    "report:generate": "npm run report:tcall && npm run report:medcor && npm run report:shared",
+    "report:tcall": "cd projects/tcall-automation && npm run report",
+    "report:medcor": "cd projects/medcor-healthcare && npm run report",
+    "report:shared": "cd projects/shared-framework && npm run report",
+    "clean:all": "npm run clean:tcall && npm run clean:medcor && npm run clean:shared",
+    "clean:tcall": "cd projects/tcall-automation && npm run clean",
+    "clean:medcor": "cd projects/medcor-healthcare && npm run clean",
+    "clean:shared": "cd projects/shared-framework && npm run clean",
+    "setup:dev": "npm run install:all && npm run docker:up",
+    "setup:prod": "npm run install:all && npm run build:all",
+    "validate:all": "npm run lint:all && npm run type-check:all && npm run test:all && npm run report:generate"
+  },
+  "keywords": [
+    "qa-automation",
+    "cypress",
+    "playwright",
+    "testing",
+    "healthcare",
+    "telecommunications",
+    "webhook",
+    "ci-cd",
+    "portfolio",
+    "end-to-end-testing",
+    "api-testing",
+    "performance-testing",
+    "security-testing"
+  ],
+  "author": {
+    "name": "Mike",
+    "email": "your.email@example.com",
+    "url": "https://github.com/yourusername"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mike-qa-automation-portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mike-qa-automation-portfolio/issues"
+  },
+  "homepage": "https://github.com/yourusername/mike-qa-automation-portfolio#readme",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.0",
+    "concurrently": "^8.0.0",
+    "cross-env": "^7.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run validate:all"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "workspaces": [
+    "projects/tcall-automation",
+    "projects/medcor-healthcare",
+    "projects/shared-framework"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

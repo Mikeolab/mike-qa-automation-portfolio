@@ -1,0 +1,17 @@
+{
+  "problem": "Retell webhook points to staging, so production calls don't work",
+  "currentBehavior": {
+    "staging": "✅ Calls work (webhook points to staging)",
+    "production": "❌ Calls show 'successful' but don't work (webhook points to staging)"
+  },
+  "solution": {
+    "approach": "Environment-aware webhook routing",
+    "implementation": [
+      "1. Create webhook router that detects environment",
+      "2. Route webhooks to appropriate handlers",
+      "3. Implement webhook switching mechanism",
+      "4. Add webhook status monitoring"
+    ]
+  },
+  "codeExample": "\n// Backend webhook router\napp.post('/api/webhooks/retell/', (req, res) => {\n  const environment = detectEnvironment(req);\n  const webhookHandler = getWebhookHandler(environment);\n  webhookHandler.handle(req, res);\n});\n\n// Environment detection\nfunction detectEnvironment(req) {\n  // Detect from headers, IP, or other context\n  return req.headers['x-environment'] || 'production';\n}\n        "
+}

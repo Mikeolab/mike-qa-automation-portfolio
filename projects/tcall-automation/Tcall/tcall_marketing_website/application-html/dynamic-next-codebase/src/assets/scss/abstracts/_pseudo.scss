@@ -1,0 +1,19 @@
+@use "z-index";
+
+@mixin pseudo($display: block, $pos: absolute, $content: "", $width: 100%, $height: 100%, $background: transparent) {
+	content: $content;
+	position: $pos;
+	z-index: z-index.$on-top;
+	display: $display;
+	width: $width;
+	height: $height;
+	background: $background;
+}
+
+/*
+
+ &::before {
+    @include pseudo.pseudo($background: backgrounds.$pseudo);
+  }
+
+*/

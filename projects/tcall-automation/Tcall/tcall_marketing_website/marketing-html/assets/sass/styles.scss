@@ -1,0 +1,18 @@
+// Theme comment, version, description and charset are located in style.css
+// --Vendor
+// @use "./vendor/__vendor-dir";
+
+// --Abstracts
+@use "./abstracts/__abstracts-dir";
+
+// --Base Styles
+@use "./base/__base-dir";
+
+// --Commons
+@use "./common/__common-dir";
+
+// --Components
+@use "./blocks/__blocks-dir";
+
+// --Layout
+@use "./layouts/__layouts-dir";

@@ -1,0 +1,1 @@
+(()=>{"use strict";var a=document.getElementsByClassName("asyncImage");Array.from(a).map(a=>{const e=new Image;e.src=a.dataset.src,e.onload=()=>(a.classList.remove("asyncImage"),"IMG"===a.nodeName?a.src=a.dataset.src:a.style.backgroundImage=`url(${a.dataset.src})`,a.removeAttribute("data-src"),a)})})();

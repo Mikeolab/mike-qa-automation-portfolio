@@ -1,0 +1,290 @@
+{
+	"plugins": [
+		"stylelint-selector-bem-pattern",
+		"stylelint-scss",
+		"stylelint-order"
+	],
+	"extends": [
+		"stylelint-config-recommended",
+		"stylelint-config-sass-guidelines"
+	],
+	"rules": {
+		"selector-class-pattern": null,
+		"selector-no-qualifying-type": [
+			true,
+			{
+				"ignore": [
+					"attribute",
+					"class"
+				]
+			}
+		],
+		"function-no-unknown": null,
+		"indentation": "tab",
+		"string-quotes": "double",
+		"no-duplicate-selectors": true,
+		"color-hex-case": "upper",
+		"color-hex-length": "short",
+		"color-named": "never",
+		"selector-max-id": 0,
+		"selector-max-combinators": 3,
+		"selector-max-attribute": [
+			1,
+			{
+				"ignoreAttributes": [
+					"type"
+				]
+			}
+		],
+		"selector-max-universal": 1,
+		"selector-max-type": [
+			1,
+			{
+				"ignoreTypes": []
+			}
+		],
+		"selector-combinator-space-after": "always",
+		"selector-attribute-quotes": "always",
+		"selector-attribute-operator-space-before": "never",
+		"selector-attribute-operator-space-after": "never",
+		"selector-attribute-brackets-space-inside": "never",
+		"declaration-block-trailing-semicolon": "always",
+		"declaration-no-important": true,
+		"declaration-colon-space-before": "never",
+		"declaration-colon-space-after": "always",
+		"property-no-vendor-prefix": true,
+		"value-no-vendor-prefix": true,
+		"number-leading-zero": "never",
+		"function-url-quotes": "never",
+		"font-weight-notation": "numeric",
+		"font-family-name-quotes": "always-where-required",
+		"comment-whitespace-inside": "always",
+		"comment-empty-line-before": "always",
+		"at-rule-no-vendor-prefix": true,
+		"block-no-empty": [
+			true,
+			{
+				"ignore": [
+					"comments"
+				]
+			}
+		],
+		"rule-empty-line-before": [
+			"always",
+			{
+				"except": [
+					"first-nested",
+					"after-single-line-comment"
+				],
+				"ignore": [
+					"first-nested"
+				]
+			}
+		],
+		"value-list-max-empty-lines": 0,
+		"max-empty-lines": 1,
+		"selector-max-empty-lines": 0,
+		"function-max-empty-lines": 1,
+		"block-closing-brace-empty-line-before": "never",
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"ignore": [
+					"after-comment"
+				],
+				"ignoreAtRules": [
+					"use",
+					"extend"
+				],
+				"except": [
+					"inside-block"
+				]
+			}
+		],
+		"no-invalid-position-at-import-rule": null,
+		"no-empty-first-line": true,
+		"no-missing-end-of-source-newline": true,
+		"declaration-block-semicolon-newline-after": "always",
+		"string-no-newline": true,
+		"value-list-comma-space-after": "always",
+		"value-list-comma-space-before": "never",
+		"selector-pseudo-element-colon-notation": "double",
+		"selector-pseudo-class-parentheses-space-inside": "always",
+		"media-feature-range-operator-space-before": "always",
+		"media-feature-range-operator-space-after": "always",
+		"media-feature-parentheses-space-inside": "never",
+		"media-feature-name-no-vendor-prefix": true,
+		"media-feature-colon-space-before": "never",
+		"media-feature-colon-space-after": "always",
+		"block-closing-brace-newline-after": "always",
+		"max-nesting-depth": [
+			3,
+			{
+				"ignore": [
+					"pseudo-classes",
+					"blockless-at-rules"
+				],
+				"ignoreAtRules": [
+					"supports",
+					"include"
+				]
+			}
+		],
+		"function-name-case": "lower",
+		"scss/dollar-variable-pattern": [
+			"^([a-z][a-z0-9]*)((?:-|--)[a-z0-9]+)*$",
+			{
+				"message": "You must use lowercase and hyphens without any uppercase letters. Variables must not start with a number."
+			}
+		],
+		"scss/function-no-unknown": [
+			null,
+			{
+				"ignoreFunctions": [
+					"functions.to-rem"
+				]
+			}
+		],
+		"scss/dollar-variable-colon-space-after": "always",
+		"scss/dollar-variable-colon-space-before": "never",
+		"scss/dollar-variable-empty-line-after": [
+			"always",
+			{
+				"except": [
+					"before-dollar-variable"
+				],
+				"disableFix": false
+			}
+		],
+		"scss/dollar-variable-empty-line-before": [
+			"always",
+			{
+				"except": [
+					"first-nested",
+					"after-dollar-variable",
+					"after-comment"
+				]
+			}
+		],
+		"scss/operator-no-newline-before": true,
+		"scss/operator-no-newline-after": true,
+		"scss/operator-no-unspaced": true,
+		"plugin/selector-bem-pattern": {
+			"preset": "bem",
+			"componentName": "(([a-z0-9]+(?!-$)-?)+)",
+			"componentSelectors": {
+				"initial": "\\.{componentName}(((__|--)(([a-z0-9\\[\\]'=]+(?!-$)-?)+))+)?$"
+			},
+			"ignoreSelectors": [
+				".*\\.has-.*",
+				".*\\.is-.*"
+			]
+		},
+		"order/properties-alphabetical-order": null,
+		"order/order": [],
+		"order/properties-order": [
+			{
+				"groupName": "pseudo",
+				"emptyLineBefore": "never",
+				"properties": [
+					"content"
+				]
+			},
+			{
+				"groupName": "positioning",
+				"emptyLineBefore": "never",
+				"properties": [
+					"position",
+					"top",
+					"right",
+					"bottom",
+					"left",
+					"z-index"
+				]
+			},
+			{
+				"groupName": "box-modal",
+				"emptyLineBefore": "never",
+				"properties": [
+					"box-sizing",
+					"display",
+					"width",
+					"min-width",
+					"max-width",
+					"height",
+					"min-height",
+					"max-height",
+					"order",
+					"justify-content",
+					"align-content",
+					"align-items",
+					"align-self",
+					"flex",
+					"flex-basis",
+					"flex-direction",
+					"flex-flow",
+					"flex-shrink",
+					"flex-wrap",
+					"gap",
+					"margin",
+					"margin-top",
+					"margin-right",
+					"margin-bottom",
+					"margin-left",
+					"padding",
+					"padding-top",
+					"padding-right",
+					"padding-bottom",
+					"padding-left"
+				]
+			},
+			{
+				"groupName": "fonts",
+				"emptyLineBefore": "never",
+				"properties": [
+					"color",
+					"font-family",
+					"font-size",
+					"font-weight",
+					"line-height",
+					"letter-spacing",
+					"text-align",
+					"text-transform"
+				]
+			},
+			{
+				"groupName": "visual",
+				"emptyLineBefore": "never",
+				"properties": [
+					"background",
+					"background-color",
+					"background-image",
+					"border",
+					"border-top",
+					"border-right",
+					"border-bottom",
+					"border-left",
+					"border-radius",
+					"opacity"
+				]
+			},
+			{
+				"groupName": "animation",
+				"emptyLineBefore": "never",
+				"properties": [
+					"transition"
+				]
+			},
+			{
+				"groupName": "misc",
+				"emptyLineBefore": "never",
+				"properties": [
+					"cursor",
+					"pointer-events",
+					"user-select",
+					"object-fit"
+				]
+			}
+		]
+	}
+}

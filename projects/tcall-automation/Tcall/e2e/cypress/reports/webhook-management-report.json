@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-09-08T09:37:13.879Z",
+  "environments": {
+    "staging": {
+      "environment": "staging",
+      "baseUrl": "https://api.dev.tcall.ai:8006",
+      "issues": [
+        {
+          "type": "detection_error",
+          "environment": "staging",
+          "message": "Error detecting webhook issues: cy.request(...).then(...).catch is not a function",
+          "severity": "medium",
+          "recommendation": "Check network connectivity and API endpoints"
+        }
+      ],
+      "timestamp": "2025-09-08T09:37:09.044Z"
+    },
+    "production": {
+      "environment": "production",
+      "baseUrl": "https://tcall.ai/api",
+      "issues": [
+        {
+          "type": "detection_error",
+          "environment": "production",
+          "message": "Error detecting webhook issues: cy.request(...).then(...).catch is not a function",
+          "severity": "medium",
+          "recommendation": "Check network connectivity and API endpoints"
+        }
+      ],
+      "timestamp": "2025-09-08T09:37:11.407Z"
+    }
+  },
+  "summary": {
+    "totalIssues": 2,
+    "stagingIssues": 1,
+    "productionIssues": 1
+  },
+  "recommendations": {
+    "immediate": [
+      "Implement environment-specific webhook routing in backend",
+      "Add webhook status monitoring and alerting",
+      "Create webhook management API endpoints for QA team"
+    ],
+    "longTerm": [
+      "Implement automated webhook switching based on deployment context",
+      "Add webhook health checks to monitoring dashboard",
+      "Create webhook configuration validation in CI/CD pipeline",
+      "Implement webhook fallback mechanisms"
+    ],
+    "qaTeam": [
+      "Add webhook status checks to test suites",
+      "Create webhook issue detection in automated tests",
+      "Implement webhook testing utilities",
+      "Add webhook status reporting to test results"
+    ]
+  },
+  "nextSteps": [
+    "Share this report with the backend engineer",
+    "Implement webhook management solution",
+    "Add webhook monitoring to CI/CD pipeline",
+    "Create webhook testing utilities for QA team"
+  ]
+}

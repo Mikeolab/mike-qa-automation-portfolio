@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" user-scalable="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" href="assets/images/favicon.ico" />
+        <title>TCALL AGENT LIST</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.min.css" />
+    </head>   
+    <body class="bg-dashboard agent-dashboard">
+        <!-- SECTION HEADER SECTION START -->
+        <header class="o-header">
+            <div class="o-container">
+                <div class="o-header__container">
+                    <div class="o-header__left-column">
+                        <a href="index.html" class="o-header__logo">
+                            <img
+                                src="assets/images/logo.svg"
+                                alt="TCALL LOGO"
+                                width="110"
+                                height="36"
+                            />
+                        </a>
+                    </div>
+                    <div class="o-header__right-column">    
+                        <div class="o-header__user">
+                            <i><img src="assets/images/user.png" alt="user"></i>
+                            <a href="javascript:void(0)" class="o-header__userarrow">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <ul class="o-header__usermenu">
+                                <li><a href="super-dashboard-personal-details.html">profile</a></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:void(0)" class="o-dasboard__hamburg">
+                            <img src="assets/images/icons/hamburg.svg" alt="menu icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- !SECTION HEADER SECTION ENDS -->
+        <div class="o-main-wrapper overflow-hidden">
+            <!-- SECTION DASHBOARD SECTION START -->
+             <section class="o-dasboard">
+                <div class="o-dasboard__spacing">
+                    <div class="o-container">
+                        <div class="o-dasboard__container">
+                            <div class="o-dasboard__flexwrapper">
+                                <div class="o-dasboard__left">
+                                    <div class="o-dasboard__overlay"></div>
+                                    <div class="o-dasboard__leftbar">
+                                        <ul class="o-dasboard__leftlist">
+                                            <li class="o-dasboard__leftitem">
+                                                <a href="index.html" class="o-dasboard__leftitems">
+                                                    <span class="o-dasboard__itemscenter tooltip" data-tooltip="">
+                                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                            <rect x="0.5" y="0.5" width="7.80039" height="7.80039" rx="1.5" stroke="#42A5E3"/>
+                                                            <rect x="11.7007" y="0.5" width="7.80039" height="7.80039" rx="1.5" stroke="#42A5E3"/>
+                                                            <rect x="0.5" y="11.6958" width="7.80039" height="7.80039" rx="1.5" stroke="#42A5E3"/>
+                                                            <rect x="11.7007" y="11.6958" width="7.80039" height="7.80039" rx="1.5" stroke="#42A5E3"/>
+                                                        </svg>
+                                                    </span>
+                                                    Dashboard
+                                                </a>
+                                            </li>
+                                            <li class="o-dasboard__leftitem">
+                                                <a href="super-agent-dashboard.html" class="o-dasboard__leftitems js-active">
+                                                    <span class="o-dasboard__itemscenter tooltip" data-tooltip="">
+                                                        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M16.8831 17.5V15.8333C16.8831 14.9493 16.5319 14.1014 15.9068 13.4763C15.2817 12.8512 14.4339 12.5 13.5498 12.5H6.88314C5.99908 12.5 5.15124 12.8512 4.52612 13.4763C3.90099 14.1014 3.5498 14.9493 3.5498 15.8333V17.5" stroke="#42A5E3" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            <path d="M10.2171 9.16667C12.0581 9.16667 13.5505 7.67428 13.5505 5.83333C13.5505 3.99238 12.0581 2.5 10.2171 2.5C8.37617 2.5 6.88379 3.99238 6.88379 5.83333C6.88379 7.67428 8.37617 9.16667 10.2171 9.16667Z" stroke="#42A5E3" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                    Agents
+                                                </a>
+                                            </li>
+                                                <a href="javascript:void(0)" class="o-dasboard__leftitems">
+                                                    <span class="o-dasboard__itemscenter tooltip" data-tooltip="">
+                                                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                                            <path d="M13.7501 4.67417C14.6835 4.85629 15.5413 5.31279 16.2138 5.98526C16.8863 6.65774 17.3428 7.51558 17.5249 8.449M13.7501 0.851562C15.6894 1.067 17.4978 1.93544 18.8783 3.31429C20.2589 4.69313 21.1296 6.50043 21.3475 8.43944M20.3919 16.0655V18.9325C20.3929 19.1987 20.3384 19.4621 20.2318 19.706C20.1252 19.9498 19.9688 20.1687 19.7727 20.3486C19.5766 20.5286 19.345 20.6656 19.0929 20.7508C18.8408 20.8361 18.5736 20.8678 18.3085 20.8438C15.3678 20.5243 12.5431 19.5194 10.0613 17.91C7.75224 16.4427 5.7946 14.4851 4.32735 12.176C2.71228 9.68294 1.70719 6.84445 1.3935 3.89054C1.36962 3.62627 1.40102 3.35992 1.48572 3.10845C1.57041 2.85699 1.70654 2.62591 1.88544 2.42994C2.06433 2.23396 2.28207 2.07739 2.52479 1.97017C2.76751 1.86296 3.0299 1.80746 3.29525 1.80721H6.1622C6.62599 1.80265 7.07561 1.96688 7.42726 2.2693C7.77891 2.57172 8.0086 2.99169 8.07351 3.45094C8.19451 4.36843 8.41893 5.26928 8.74246 6.13632C8.87104 6.47837 8.89887 6.85011 8.82265 7.20749C8.74643 7.56487 8.56936 7.89291 8.31242 8.15274L7.09874 9.36642C8.45917 11.7589 10.4401 13.7399 12.8327 15.1003L14.0463 13.8867C14.3062 13.6297 14.6342 13.4526 14.9916 13.3764C15.349 13.3002 15.7207 13.328 16.0628 13.4566C16.9298 13.7802 17.8307 14.0046 18.7481 14.1256C19.2124 14.1911 19.6363 14.4249 19.9394 14.7826C20.2425 15.1403 20.4035 15.5969 20.3919 16.0655Z" stroke="#42A5E3" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </span>
+                                                    Call
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="o-dasboard__right">
+                                    <div class="o-dasboard__rightbar">
+                                        <div class="o-dasboard__rightheading">
+                                            <a href="super-agent-dashboard.html" class="o-dasboard__backbtn">
+                                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M19.3867 12.2266H5.38672" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M12.3867 19.2266L5.38672 12.2266L12.3867 5.22656" stroke="white" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                                BACK
+                                            </a>
+                                        </div>
+                                        <div class="o-dasboard__rightbody o-agentlist">
+                                            <div class="o-agentlist__heading">
+                                                <div class="o-agentlist__leftheading">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M16 2V8H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M23 1L16 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M22.0001 16.9201V19.9201C22.0012 20.1986 21.9441 20.4743 21.8326 20.7294C21.721 20.9846 21.5574 21.2137 21.3521 21.402C21.1469 21.5902 20.9046 21.7336 20.6408 21.8228C20.377 21.912 20.0974 21.9452 19.8201 21.9201C16.7429 21.5857 13.7871 20.5342 11.1901 18.8501C8.77388 17.3148 6.72539 15.2663 5.19006 12.8501C3.50003 10.2413 2.4483 7.27109 2.12006 4.1801C2.09507 3.90356 2.12793 3.62486 2.21656 3.36172C2.30518 3.09859 2.44763 2.85679 2.63482 2.65172C2.82202 2.44665 3.04986 2.28281 3.30385 2.17062C3.55783 2.05843 3.8324 2.00036 4.11006 2.0001H7.11006C7.59536 1.99532 8.06585 2.16718 8.43382 2.48363C8.80179 2.80008 9.04213 3.23954 9.11005 3.7201C9.23668 4.68016 9.47151 5.62282 9.81006 6.5301C9.9446 6.88802 9.97372 7.27701 9.89396 7.65098C9.81421 8.02494 9.62892 8.36821 9.36005 8.6401L8.09006 9.9101C9.51361 12.4136 11.5865 14.4865 14.0901 15.9101L15.3601 14.6401C15.6319 14.3712 15.9752 14.1859 16.3492 14.1062C16.7231 14.0264 17.1121 14.0556 17.4701 14.1901C18.3773 14.5286 19.32 14.7635 20.2801 14.8901C20.7658 14.9586 21.2095 15.2033 21.5266 15.5776C21.8437 15.9519 22.0122 16.4297 22.0001 16.9201Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                    <h4>My Inbound Agents list</h4>
+                                                </div>
+                                                <div class="o-agentlist__headsearch">
+                                                    <div class="form-groups">
+                                                        <label>Search by</label>
+                                                        <input type="text" class="input" placeholder="Agent name, Agent ID">
+                                                    </div>
+                                                    <div class="form-groups">
+                                                        <label>Filter by</label>
+                                                        <select class="input input--select">
+                                                            <option selected>Select Client name</option>
+                                                        </select>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="o-agentlist__list">
+                                                <li class="o-agentlist__item">
+                                                    <div class="o-agentlist__items o-agentlist__items--small">
+                                                        <i><img src="assets/images/icons/agent-name1.png" alt="user"></i>
+                                                    </div>
+                                                    <div class="o-agentlist__items">
+                                                        <p>Agent name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Agent ID</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Client name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Language</p>
+                                                    </div>
+                                                    
+                                                    <div class="o-agentlist__items o-agentlist__items--large">
+                                                        <a href="javascript:void(0)" class="view-agent">
+                                                            VIEW AGENT
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="o-agentlist__item">
+                                                    <div class="o-agentlist__items o-agentlist__items--small">
+                                                        <i><img src="assets/images/icons/agent-name1.png" alt="user"></i>
+                                                    </div>
+                                                    <div class="o-agentlist__items">
+                                                        <p>Agent name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Agent ID</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Client name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Language</p>
+                                                    </div>
+                                                    
+                                                    <div class="o-agentlist__items o-agentlist__items--large">
+                                                        <a href="javascript:void(0)" class="view-agent">
+                                                            VIEW AGENT
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                                <li class="o-agentlist__item">
+                                                    <div class="o-agentlist__items o-agentlist__items--small">
+                                                        <i><img src="assets/images/icons/agent-name1.png" alt="user"></i>
+                                                    </div>
+                                                    <div class="o-agentlist__items">
+                                                        <p>Agent name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Agent ID</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Client name</p>
+                                                    </div>
+                                                    <div class="o-agentlist__items o-agentlist__items--small1">
+                                                        <p>Language</p>
+                                                    </div>
+                                                    
+                                                    <div class="o-agentlist__items o-agentlist__items--large">
+                                                        <a href="javascript:void(0)" class="view-agent">
+                                                            VIEW AGENT
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+            <!-- !SECTION DASHBOARD SECTION ENDS -->
+        </div>
+
+        <div class="popup" data-modal="modaledit">
+            <div class="popup__bg">
+                <div class="popup__header">
+                    <div class="popup-headwrap">
+                        <img src="assets/images/popup-agent-call.svg" alt="popup call">
+                        <h3>Make A Call</h3>
+                    </div>
+                    <a href="javascript:void(0)" class="popup__chatclose js-modal-close">+</a>
+                </div>
+                <div class="popup__body">
+                    <div class="popup__bodyblock">
+                        <div class="agent-wrapper__selectlanguage">
+                            <div class="agent-wrapper__from-group">
+                                <label>From phone number</label>
+                                <select class="agent-wrapper__input-form agent-wrapper__input-form--select">
+                                    <option selected>7682359810</option>
+                                    <option>456712907</option>
+                                    <option>1234567890</option>
+                                </select>
+                            </div>
+                            <div class="agent-wrapper__from-group">
+                                <label>To phone number</label>
+                                <span class="agent-wrapper__groupphone">
+                                    <img src="assets/images/icons/usa.png" alt="usa">
+                                    <b>+1</b>
+                                    <input type="text" class="agent-wrapper__input-form agent-wrapper__input-form--phone">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup__btnchat popup__btnchat--center">
+                    <a href="javascript:void(0)" class="o-dasboard__apartbtn">launch call</a>     
+                </div>
+                
+            </div>
+         </div>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script src="assets/js/src/custom.js"></script>
+    </body>
+</html>

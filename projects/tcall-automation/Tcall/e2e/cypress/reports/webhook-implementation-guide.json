@@ -1,0 +1,22 @@
+{
+  "problem": "Retell only allows one webhook URL, causing conflicts between staging and production",
+  "solution": "Implement environment-aware webhook routing",
+  "implementation": {
+    "backend": [
+      "Create webhook router that detects environment from request context",
+      "Implement webhook switching mechanism",
+      "Add webhook status monitoring",
+      "Create webhook management API endpoints"
+    ],
+    "qa": [
+      "Add webhook status checks to test suites",
+      "Implement webhook issue detection",
+      "Create webhook testing utilities",
+      "Add webhook monitoring to CI/CD"
+    ]
+  },
+  "codeExamples": {
+    "webhookRouter": "\n// Backend webhook router example\napp.post('/api/webhooks/retell/', (req, res) => {\n  const environment = detectEnvironment(req);\n  const webhookHandler = getWebhookHandler(environment);\n  webhookHandler.handle(req, res);\n});\n\nfunction detectEnvironment(req) {\n  // Detect environment from headers, IP, or other context\n  return req.headers['x-environment'] || 'production';\n}\n          ",
+    "webhookSwitcher": "\n// Webhook switching mechanism\nclass WebhookManager {\n  async switchToEnvironment(environment) {\n    const webhookUrl = this.getWebhookUrl(environment);\n    await this.updateRetellWebhook(webhookUrl);\n    await this.verifyWebhookSwitch(environment);\n  }\n}\n          "
+  }
+}

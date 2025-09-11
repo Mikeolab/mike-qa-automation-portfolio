@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-09-08T15:09:09.964Z",
+  "environments": {
+    "staging": {
+      "environment": "staging",
+      "timestamp": "2025-09-08T15:09:09.973Z",
+      "checks": {
+        "webhook": {
+          "status": 404,
+          "accessible": true,
+          "message": "✅ Accessible"
+        },
+        "retell": {
+          "status": 200,
+          "working": true,
+          "authenticated": true,
+          "message": "✅ Working"
+        },
+        "health": {
+          "status": 200,
+          "healthy": true,
+          "authenticated": true,
+          "message": "✅ Healthy"
+        }
+      }
+    },
+    "production": {
+      "environment": "production",
+      "timestamp": "2025-09-08T15:09:15.989Z",
+      "checks": {
+        "webhook": {
+          "status": 404,
+          "accessible": true,
+          "message": "✅ Accessible"
+        },
+        "retell": {
+          "status": 404,
+          "working": false,
+          "authenticated": false,
+          "message": "⚠️ Issue (404)"
+        },
+        "health": {
+          "status": 404,
+          "healthy": true,
+          "authenticated": false,
+          "message": "✅ Healthy"
+        }
+      }
+    }
+  }
+}

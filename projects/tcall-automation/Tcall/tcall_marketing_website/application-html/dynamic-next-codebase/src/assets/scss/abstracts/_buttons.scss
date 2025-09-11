@@ -1,0 +1,89 @@
+@use "colors";
+@use "media-query";
+@use "functions";
+@use "shadows";
+@use "animations";
+@use "fonts";
+@use "border-radius";
+
+.btn-default {
+	$btn-default: &;
+
+	box-sizing: border-box;
+	@include fonts.font-size--primary-button;
+	width: 100%;
+	max-width: functions.torem(226px);
+	height: functions.torem(55px);
+	margin: auto;
+	color: colors.$white;
+	font-size: functions.torem(16px);
+	text-transform: capitalize;
+	background: colors.$primary-color;
+	border: functions.torem(1px) solid colors.$primary-color;
+	border-radius: border-radius.$border-radius--button;
+	@include media-query.breakpoint(smallg) {
+		margin: 0;
+		font-size: functions.torem(18px);
+	}
+
+	&:hover {
+		color: colors.$primary-color;
+		background: colors.$white;
+	}
+
+	&--auto {
+		margin: auto;
+	}
+
+	&--holo {
+		color: colors.$primary-color;
+		background: transparent;
+
+		&:hover {
+			color: colors.$white;
+			background-color: colors.$primary-color;
+		}
+	}
+
+	&--rollover {
+		display: flex;
+		max-width: functions.torem(261px);
+		height: functions.torem(51px);
+		justify-content: space-between;
+		align-items: center;
+		padding: functions.torem(7px) functions.torem(7.5px) functions.torem(7px) functions.torem(25px);
+		color: colors.$white;
+		font-size: functions.torem(16px);
+		text-transform: uppercase;
+		text-decoration: none;
+		text-indent: functions.torem(20px);
+		@include media-query.breakpoint(smallg) {
+			font-size: functions.torem(20px);
+			text-indent: inherit;
+		}
+		
+		&:hover {
+			#{$btn-default}__arrow {
+				background-color: colors.$primary-color;
+				transform: rotate(45deg);
+			}
+			#{$btn-default}__svg {
+				path {
+					stroke: colors.$white;
+				}
+			}
+		}
+	}
+
+	&__arrow {
+		display: inline-flex;
+		width: functions.torem(39px);
+		height: functions.torem(39px);
+		justify-content: center;
+		align-items: center;
+		margin-left: functions.torem(10px);
+		background-color: colors.$white;
+		border-radius: border-radius.$border-radius--full-round;
+		transition: all .9s ease-out;
+	}
+}

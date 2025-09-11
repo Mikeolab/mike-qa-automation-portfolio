@@ -1,0 +1,77 @@
+@use "../abstracts/media-query";
+@use "../abstracts/functions";
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+@use "../abstracts/z-index";
+.btn-default {
+    $btn-default: &;
+
+    max-width: 226px;
+    width: 100%;
+    height: 55px;
+    background: colors.$primary-color;
+    border-radius: 50px;
+    border: none;
+    font-family: fonts.$font-family--body;;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: colors.$white;
+    border: 1px solid colors.$primary-color;
+    &:hover{
+        background: colors.$white;
+        color: colors.$primary-color;
+    }
+    &:disabled{
+        &:before{
+            display: none;
+        }
+        span{
+
+        }
+    }
+    &--holo{
+        background: transparent;
+        color: colors.$primary-color;
+        &:hover{
+            background-color: colors.$primary-color;
+            color: colors.$white;
+        }
+    }
+
+    &--rollover{
+        max-width: 261px;
+        height: 51px;
+        display: flex;
+        padding: 7px 7.5px 7px 25px;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        color: colors.$white;
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover{
+            #{$btn-default}__arrow{
+                background-color: colors.$primary-color;
+                transform: rotate(45deg);
+
+            }
+            #{$btn-default}__svg{
+                path{
+                    stroke: colors.$white;
+                }
+            }
+        }
+    }
+
+    &__arrow{
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: inline-flex;
+        margin-left: 10px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.9s ease-out;
+    }
+}

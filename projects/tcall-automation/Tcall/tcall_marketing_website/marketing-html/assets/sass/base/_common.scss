@@ -1,0 +1,185 @@
+@use "../abstracts/media-query";
+@use "../abstracts/functions";
+@use "../abstracts/colors";
+@use "../abstracts/fonts";
+@use "../abstracts/z-index";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	box-sizing: border-box;
+	height: stretch;
+	color: colors.$blue-text-color;
+	font-family: fonts.$font-family--body;
+	background: colors.$bgcolor;
+	scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+}
+
+.o-main-wrapper {
+	overflow: hidden;
+	&--hidden {
+		overflow: hidden;
+	}
+	&--black {
+		background-color: colors.$bgcolor1;
+		overflow: hidden;
+	}
+}
+
+body {
+	overflow-x: hidden;
+	overflow-y: visible;
+
+	&.menu-open {
+		overflow: hidden;
+	}
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+}
+button{
+	cursor: pointer;
+}
+input[type=button], input[type=submit], input[type=reset] {
+	cursor: pointer;
+}
+a,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input {
+	transition: all .5s ease-out;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+	margin: 0;
+	padding: 0;
+	//font-size: 100%;
+	border: 0;
+	vertical-align: baseline;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box;
+}
+
+.img-responsive {
+	max-width: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.d-flex {
+	display: flex;
+}
+
+img {
+	image-rendering: crisp-edges;
+	max-width: 100%;
+}
+
+.center {
+	text-align: center;
+}
+  
+.item .content {
+	overflow: hidden;
+}

@@ -1,0 +1,60 @@
+{
+  "name": "shared-framework",
+  "version": "1.0.0",
+  "description": "Shared QA automation framework with reusable utilities and best practices",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist coverage",
+    "prepublish": "npm run build",
+    "docs:generate": "typedoc src --out docs",
+    "docs:serve": "http-server docs -p 8080"
+  },
+  "keywords": [
+    "testing-framework",
+    "cypress",
+    "utilities",
+    "page-objects",
+    "test-data",
+    "automation",
+    "shared-library"
+  ],
+  "author": "Mike",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "@types/jest": "^29.0.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "typedoc": "^0.24.0",
+    "http-server": "^14.0.0"
+  },
+  "dependencies": {
+    "cypress": "^13.0.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.0",
+    "faker": "^6.6.6",
+    "uuid": "^9.0.0"
+  },
+  "peerDependencies": {
+    "cypress": ">=12.0.0"
+  }
+}

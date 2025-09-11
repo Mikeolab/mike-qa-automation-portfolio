@@ -1,0 +1,80 @@
+$to-clamp-function-site-width: 1430px;
+$to-clamp-function-site-width--small: 688px;
+
+// Device Widths
+$site-width: 1430px;
+$wrapper-width: 1278px;
+$view-width: 1320px;
+$device--xsmall: 374px;
+$device--small: 688px;
+$device--smallg: 768px;
+$device--medium: 992px;
+$device--ipad: 1025px;
+$device--hmedium: 1152px;
+$device--large: 1312px;
+$device--elarge: 1400px;
+$device--extralarge: 1550px;
+$device--extratolarge: 1700px;
+
+@mixin breakpoint($point) {
+	@if ($point == xsmall) {
+		//374>
+		@media only screen and (min-width: #{$device--xsmall}) {
+			@content;
+		}
+	}
+	@else if ($point == small) {
+		//688>
+		@media only screen and (min-width: #{$device--small}) {
+			@content;
+		}
+	}
+	@else if ($point == smallg) {
+		//768>
+		@media only screen and (min-width: #{$device--smallg}) {
+			@content;
+		}
+	}
+	@else if ($point == medium) {
+		//992>
+		@media only screen and (min-width: #{$device--medium}) {
+			@content;
+		}
+	}
+	@else if ($point == ipad) {
+		//1024>
+		@media only screen and (min-width: #{$device--ipad}) {
+			@content;
+		}
+	}
+	@else if ($point == hmedium) {
+		//1200>
+		@media only screen and (min-width: #{$device--hmedium}) {
+			@content;
+		}
+	}
+	@else if ($point == large) {
+		//1312>
+		@media only screen and (min-width: #{$device--large}) {
+			@content;
+		}
+	}
+	@else if ($point == elarge) {
+		//1400>
+		@media only screen and (min-width: #{$device--elarge}) {
+			@content;
+		}
+	}
+	@else if ($point == extralarge) {
+		//1550>
+		@media only screen and (min-width: #{$device--extralarge}) {
+			@content;
+		}
+	}
+	@else if ($point == extratolarge) {
+		//1700>
+		@media only screen and (min-width: #{$device--extratolarge}) {
+			@content;
+		}
+	}
+}

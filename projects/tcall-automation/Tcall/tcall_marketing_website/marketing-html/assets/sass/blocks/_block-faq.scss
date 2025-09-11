@@ -1,0 +1,274 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/media-query";
+@use "../abstracts/spacing";
+@use "../abstracts/fonts";
+@use "../abstracts/anchors";
+@use "../abstracts/shadows";
+@use "../abstracts/buttons";
+@use "../abstracts/z-index";
+@use "../abstracts/border-radius";
+
+.o-faq {
+	$o-faq: &;
+
+	position: relative;
+	overflow: hidden;
+	background: rgb(203,239,242);
+	background: linear-gradient(0deg, rgba(203,239,242,1) 0%, rgba(193,226,243,1) 100%);
+	border-top-left-radius: functions.torem(30px);
+	border-top-right-radius: functions.torem(30px);
+	@include media-query.breakpoint(medium) {
+		overflow: visible;
+	}
+
+	&--visible {
+		overflow: visible;
+	}
+
+	&__title {
+		margin-bottom: functions.torem(18px);
+		color: colors.$dark-color2;
+		text-align: center;
+		@include media-query.breakpoint(smallg) {
+			margin-bottom: functions.torem(100px);
+		}
+
+		&--pricepage {
+			position: relative;
+			z-index: z-index.$on-top;
+			font-size: functions.torem(40px);
+			font-weight: fonts.$font-weight--normal;
+			@include media-query.breakpoint(smallg) {
+				margin-bottom: functions.torem(60px);
+			}
+		}
+	}
+
+	&__spacing {
+		padding: functions.torem(80px) 0 functions.torem(30px);
+		@include media-query.breakpoint(smallg) {
+			padding: functions.torem(80px) 0 functions.torem(120px);
+		}
+	}
+
+	&__background {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		width: 100%;
+		height: 100%;
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	&__topfaq {
+		position: absolute;
+		top: -30%;
+		left: 0;
+		display: none;
+		width: 100%;
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	&__rightfaq {
+		position: absolute;
+		top: 50%;
+		right: -20%;
+		transform: translateY(-50%);
+		display: none;
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	&__shape {
+		position: absolute;
+		top: 30%;
+		right: 0;
+		z-index: z-index.$on-top;
+		display: none;
+		width: functions.torem(235px);
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	&__shape1 {
+		position: absolute;
+		top: -3%;
+		left: 0;
+		z-index: z-index.$on-top;
+		display: none;
+		width: functions.torem(235px);
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	&__title-hightlight {
+		display: block;
+		color: colors.$dark-color2;
+		// margin-top: functions.torem(10px);
+		// background: rgb(246, 220, 255);
+		// background: linear-gradient(90deg, rgba(246, 220, 255, 1) 0%, rgba(211, 172, 234, 1) 100%);
+		// background-clip: text;
+		// -webkit-text-fill-color: transparent;
+	}
+
+	&__left {
+		position: relative;
+		max-width: 100%;
+		flex: 0 0 100%;
+		@include media-query.breakpoint(medium) {
+			max-width: 45%;
+			flex: 0 0 45%;
+		}
+	}
+
+	&__glow {
+		position: absolute;
+		top: functions.torem(-360px);
+		left: 0;
+	}
+
+	&__btn {
+		display: flex;
+		max-width: functions.torem(220px);
+		height: functions.torem(50px);
+		justify-content: center;
+		align-items: center;
+		margin-top: functions.torem(40px);
+		font-family: fonts.$font-family--heading;
+		font-size: functions.torem(16px);
+		font-weight: fonts.$font-weight--bold;
+		text-transform: uppercase;
+		background: none;
+		border: functions.torem(2px) solid colors.$gradient2;
+		border-radius: functions.torem(106px);
+		text-decoration: none;
+		color: colors.$gradient2;
+		&:hover{
+			background: colors.$gradient2;
+			color: colors.$white;
+		}
+	}
+
+	&__right {
+		flex: 1;
+	}
+
+	&__right-img {
+		position: absolute;
+		top: 50px;
+		right: 0;
+		display: none;
+		@include media-query.breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	.o-container {
+		position: relative;
+	}
+}
+
+.o-faqpage {
+	$o-faqpage: &;
+	border-radius: 0;
+	position: relative;
+	background: colors.$bgcolor1;
+	border-radius: unset;
+	&--onlypage{
+		border-radius: 0;
+		background: rgb(87,113,195);
+		background: linear-gradient(0deg, rgba(87,113,195,1) 40%, rgba(230,246,248,1) 100%);
+	}
+	&__spacing {
+		padding: functions.torem(50px) 0 functions.torem(30px);
+		@include media-query.breakpoint(smallg) {
+			padding: functions.torem(180px) 0 functions.torem(50px);
+		}
+
+		&--faqpage {
+			padding: functions.torem(110px) 0 functions.torem(30px);
+			@include media-query.breakpoint(smallg) {
+				padding: functions.torem(180px) 0 functions.torem(50px);
+			}
+		}
+	}
+
+	&__title {
+		margin: 0 0 functions.torem(15px);
+		font-size: functions.torem(38px);
+		font-weight: fonts.$font-weight--normal;
+		@include media-query.breakpoint(smallg) {
+			margin: 0 0 functions.torem(30px);
+			font-size: functions.torem(54px);
+		}
+	}
+
+	&__subtitle {
+		margin: 0 0 functions.torem(50px);
+		color: colors.$blue-text-color;
+		font-size: functions.torem(14px);
+		text-align: center;
+	}
+
+	&__item {
+		margin: 0 0 functions.torem(2px);
+		background-color: colors.$white;
+		border-radius: border-radius.$border-radius--sbtn;
+	}
+
+	&__question {
+		color: colors.$black;
+		font-size: 20px;
+		text-transform: inherit;
+	}
+
+	&__button {
+		padding: functions.torem(35px) functions.torem(35px);
+	}
+
+	&__icon {
+		top: functions.torem(30px);
+		right: functions.torem(10px);
+		left: inherit;
+		stroke: colors.$black;
+	}
+
+	&__content {
+		padding: 0;
+	}
+
+	&__answare {
+		margin: 0;
+		padding: 0 functions.torem(35px) functions.torem(50px);
+	}
+
+	&__faqback {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		width: auto;
+		height: 100%;
+	}
+
+	&__faqdot1 {
+		position: absolute;
+		top: 38%;
+		left: -50px;
+	}
+
+	&__faqdot2 {
+		position: absolute;
+		top: 60%;
+		right: 50px;
+	}
+}

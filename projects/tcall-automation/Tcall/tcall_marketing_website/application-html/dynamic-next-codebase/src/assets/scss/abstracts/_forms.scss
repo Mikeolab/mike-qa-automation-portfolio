@@ -1,0 +1,170 @@
+@use "colors";
+@use "media-query";
+@use "functions";
+@use "shadows";
+@use "animations";
+@use "fonts";
+@use "border-radius";
+
+input {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: functions.torem(20px);
+	padding: 17px;
+	color: #555555;
+	background-color: colors.$white;
+	border: 0;
+	border-radius: border-radius.$border-radius--sbtn;
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+select {
+	box-sizing: border-box;
+	width: 100%;
+	margin-bottom: functions.torem(20px);
+	padding: 17px;
+	color: #555555;
+	background: url(../images/icons/select-arrow.svg) no-repeat 95% 50% #FFF;
+	background-color: colors.$white;
+	border: 0;
+	border-radius: border-radius.$border-radius--sbtn;
+	appearance: none;
+	
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+textarea {
+	border: 0;
+	height: 102px;
+	resize: none;
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+
+.o-form-field-styles {
+	label {
+		line-height: 20px;
+		display: block;
+	}
+    input {
+		width: 100%;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 14px;
+        color: #0B0B0B;
+		border-bottom: #7500ce 1px solid;
+    	border-radius: 0;
+		&:disabled {
+			border-bottom: 0;
+		}
+    }
+    select {
+		width: 100%;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 14px;
+        color: #0B0B0B;
+		border-bottom: #7500ce 1px solid;
+    	border-radius: 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: url(../images/icons/select-arrow.svg) 92% / 15% no-repeat #fff;
+		background-size: 14px;
+		&:focus-visible {
+			outline: none;
+		}
+		&:disabled {
+			border-bottom: 0;
+			background: none;
+		}
+    }
+    textarea {
+		width: 100%;
+		height: 80px;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 14px;
+    	line-height: 22px;
+        color: #0B0B0B;
+		background-color: transparent;
+		border-bottom: #7500ce 1px solid;
+    	border-radius: 0;
+		&:disabled {
+			border-bottom: 0;
+		}
+    }
+}
+.o-form-button-wrapper {
+	display: flex;
+	flex-direction: column;
+	@include media-query.breakpoint(smallg) {
+		gap: 10px;
+		flex-direction: row;
+	}
+}
+.o-form-edit-styles {
+	label {
+		line-height: 20px;
+		display: block;
+		font-size: 14px;
+    	color: #0052b4;
+    	margin-bottom: 5px;
+		text-align: left;
+	}
+	select {
+		width: 100%;
+        margin-bottom: 15px;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #0B0B0B;
+		border: #d2e5ff 1px solid;
+		background-color: #d2e5ff;
+    	border-radius: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		&:focus-visible {
+			outline: none;
+		}
+    }
+	input {
+		width: 100%;
+        margin-bottom: 15px;
+        padding: 5px 10px;
+        font-size: 14px;
+        color: #0B0B0B;
+		border: #d2e5ff 1px solid;
+		background-color: #d2e5ff;
+    	border-radius: 10px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		&:focus-visible {
+			outline: none;
+		}
+    }
+}
+
+.o-form-file-style {
+	padding: 12px 10px !important;
+}
+form{
+	width: 100%;
+}
+label{
+	display: block;
+}
+button{
+	cursor: pointer;
+	border: none;
+	&.actionbtn{
+		background: transparent;
+	}
+}

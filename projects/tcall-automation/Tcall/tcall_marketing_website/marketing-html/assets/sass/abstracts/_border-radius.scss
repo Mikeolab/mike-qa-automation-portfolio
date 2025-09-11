@@ -1,0 +1,10 @@
+@use "functions";
+
+$border-radius--button: functions.torem(50px);
+$border-radius--full-round: 100%;
+$border-radius--small: functions.torem(10px);
+$border-radius--video: functions.torem(40px);
+$border-radius--box-30: functions.torem(30px);
+$border-radius--box-12: functions.torem(12px);
+$border-radius--box: functions.torem(20px);
+$border-radius--sbtn: functions.torem(8px);

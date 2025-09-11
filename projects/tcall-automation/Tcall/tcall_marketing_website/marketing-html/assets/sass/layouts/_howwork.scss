@@ -1,0 +1,192 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/media-query";
+@use "../abstracts/spacing";
+@use "../abstracts/fonts";
+@use "../abstracts/anchors";
+@use "../abstracts/shadows";
+@use "../abstracts/buttons";
+@use "../abstracts/z-index";
+@use "../abstracts/animations";
+@use "../abstracts/border-radius";
+
+.o-howork {
+	$o-howork: &;
+
+	background-color: colors.$black;
+
+	&__spacing {
+		padding: functions.torem(120px) 0 functions.torem(30px);
+		@include media-query.breakpoint(smallg) {
+			padding: functions.torem(138px) 0 functions.torem(80px);
+		}
+		@include media-query.breakpoint(extralarge) {
+			padding: functions.torem(198px) 0 functions.torem(80px);
+		}
+	}
+
+	&__heading {
+		margin-bottom: functions.torem(22px);
+		text-align: center;
+		@include fonts.font-size--blue-sub-heading;
+	}
+
+	&__tabheader {
+		margin: functions.torem(30px) auto functions.torem(40px);
+	}
+
+	&__accordions {
+		height: functions.torem(580px);
+		@include media-query.breakpoint(smallg) {
+			height: functions.torem(640px);
+		}
+	}
+
+	&__buttonarea {
+		z-index: z-index.$high1;
+		width: 100%;
+		padding-top: functions.torem(5px);
+		background-color: colors.$white;
+	}
+
+	&__accordion {
+		position: relative;
+		width: 100%;
+		max-width: functions.torem(758px);
+		margin: auto;
+		margin-bottom: functions.torem(10px);
+		padding: functions.torem(15px) functions.torem(15px) functions.torem(17px);
+		border-radius: border-radius.$border-radius--box-30;
+		overflow: hidden;
+		@include media-query.breakpoint(smallg) {
+			max-height: functions.torem(326px);
+			padding: functions.torem(17px) functions.torem(57px) functions.torem(34px) functions.torem(17px);
+		}
+
+		&--color1 {
+			background-color: colors.$service-block-color1;
+		}
+
+		&--color2 {
+			background-color: colors.$point-bgcolor12;
+		}
+
+		&--color3 {
+			background-color: colors.$point-bgcolor13;
+		}
+
+		&--color4 {
+			background-color: colors.$point-bgcolor14;
+		}
+
+		&--color5 {
+			background-color: colors.$point-bgcolor15;
+		}
+
+		&--bottom {
+			#{$o-howork}__wrap {
+				align-items: flex-end;
+				overflow: visible;
+			}
+			#{$o-howork}__leftimage {
+				position: relative;
+				@include media-query.breakpoint(smallg) {
+					top: functions.torem(34px);
+				}
+			}
+		}
+	}
+
+	&__number {
+		display: flex;
+		width: 100%;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: functions.torem(15px);
+	}
+
+	&__leftimage {
+		max-width: 100%;
+		@include media-query.breakpoint(smallg) {
+			max-width: functions.torem(170px);
+		}
+		@include media-query.breakpoint(extralarge) {
+			max-width: functions.torem(220px);
+		}
+	}
+
+	&__accordiontext {
+		@include fonts.font-size--accordiannumber;
+		margin-left: functions.torem(10px);
+		color: colors.$blue-text-color1;
+	}
+
+	&__wrap {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		overflow: hidden;
+	}
+
+	&__accordionleft {
+		width: 75%;
+		margin: auto;
+		text-align: center;
+		@include media-query.breakpoint(smallg) {
+			display: flex;
+			width: 48%;
+			height: 100%;
+			justify-content: center;
+			align-items: flex-end;
+			margin: 0;
+		}
+	}
+
+	&__accordionright {
+		width: 100%;
+		@include media-query.breakpoint(smallg) {
+			width: 43%;
+			height: 100%;
+		}
+	}
+
+	&__title {
+		margin-bottom: functions.torem(7px);
+		color: colors.$black;
+		@include fonts.font-size--tabtitle1;
+		text-align: center;
+		@include media-query.breakpoint(smallg) {
+			text-align: left;
+		}
+	}
+
+	&__text {
+		@include fonts.font-size--text;
+		color: colors.$black;
+		text-align: center;
+		@include media-query.breakpoint(smallg) {
+			text-align: left;
+		}
+	}
+
+	&__accordionnumber {
+		position: relative;
+		display: flex;
+		width: functions.torem(30px);
+		height: functions.torem(30px);
+		justify-content: center;
+		align-items: center;
+		color: colors.$white;
+		font-size: functions.torem(12px);
+		font-weight: fonts.$font-weight--bolder;
+		background-color: colors.$pink-color1;
+		border-radius: border-radius.$border-radius--full-round;
+		@include media-query.breakpoint(smallg) {
+			width: functions.torem(40px);
+			height: functions.torem(40px);
+			font-size: functions.torem(16px);
+		}
+	}
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" user-scalable="no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <link rel="icon" href="assets/images/favicon.ico" />
+        <title>TCALL - GET OTP</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.min.css" />
+    </head>     
+    <body class="bg-dashboard o-login">
+        <header class="o-header">
+            <div class="o-container">
+                <div class="o-header__container">
+                    <div class="o-header__left-column">
+                        <a href="index.html" class="o-header__logo">
+                            <img
+                                src="assets/images/logo.svg"
+                                alt="TCALL LOGO"
+                                width="110"
+                                height="36"
+                            />
+                        </a>
+                    </div>
+                    <div class="o-header__right-column">    
+                        <div class="o-header__user">
+                            <i><img src="assets/images/user.png" alt="user"></i>
+                            <a href="javascript:void(0)" class="o-header__userarrow">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1.5L6 6.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <ul class="o-header__usermenu">
+                                <li><a href="super-dashboard-personal-details.html">profile</a></li>
+                            </ul>
+                        </div>
+                        <a href="javascript:void(0)" class="o-dasboard__hamburg">
+                            <img src="assets/images/icons/hamburg.svg" alt="menu icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="o-main-wrapper">
+            <div class="o-container">
+                <div class="o-login__bodyarea">
+                    <div class="o-login__imagepart">
+                        <img src="assets/images/login-microphone.svg" alt="login-microphone">
+                    </div>
+                    <div class="o-login__formwrapper">
+                        <p class="o-login__forgetsubheading">Please enter you OTP code sent to your Email ID</p>
+                        <form>
+                            <div class="o-login__formgroup o-login__formgroup--otp">
+                                <input type="number" class="o-login__input">
+                                <input type="number" class="o-login__input">
+                                <input type="number" class="o-login__input">
+                                <input type="number" class="o-login__input">
+                            </div>
+                            
+                            <div class="o-login__btnarea o-login__btnarea--forgotpass">
+                                <span>
+                                    <button type="submit" class="o-login__button">VERIFY</button>
+                                </span>
+                            </div>
+                        </form>
+                        <p class="o-login__bottomtext">Didn’t get? <a href="javascript:void(0)">Resend OTP</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            const elements = document.querySelectorAll(".eye");
+            const password = document.querySelector(".o-login__grouppass");
+
+            elements.forEach(element => {
+                element.addEventListener('click', () => {
+                    password.classList.toggle("showPass");
+                });
+            });
+
+        </script>
+    </body>
+</html>

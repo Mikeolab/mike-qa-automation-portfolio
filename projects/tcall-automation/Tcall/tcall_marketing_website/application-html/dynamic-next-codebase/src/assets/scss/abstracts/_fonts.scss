@@ -1,0 +1,507 @@
+@use "functions";
+
+@import "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+/* stylelint-disable number-leading-zero -- Zeros required for the fluid function */
+
+// ANCHOR SCSS Letter Spacing Variables
+$letter-spacing--menu-branding: initial;
+
+// ANCHOR Font Families
+$font-family--body: "Lato", sans-serif;
+$font-family--heading: "Lato", sans-serif;
+
+
+// ANCHOR Font Weights
+$font-weight--light: 300;
+$font-weight--normal: 400;
+$font-weight--medium: 500;
+$font-weight--bold: 600;
+$font-weight--bolder: 700;
+
+// ANCHOR TEXT TRANSFORM
+$uppercase: uppercase;
+$lowercase: lowercase;
+$capitalize: capitalize;
+
+// ANCHOR paragraph Spacing
+@mixin paragraph-margin {
+	margin-bottom: 20px;
+}
+
+// ANCHOR paragraph Spacing
+%paragraph-margin {
+	margin-bottom: functions.torem(20px);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+// SECTION Classes containing all font styles
+body {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 18px, 20px);
+	@include functions.fluid(line-height, 30px, 32px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+// ANCHOR Mixin for Font set
+@mixin font-size--h1 {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--bolder;
+	// ======================================== H1
+	@include functions.fluid(font-size, 30px, 75px);
+	@include functions.fluid(line-height, 38px, 95px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--h2 {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--bolder;
+	// ======================================== H1
+	@include functions.fluid(font-size, 30px, 55px);
+	@include functions.fluid(line-height, 35px, 65px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--h3 {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--bold;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 30px);
+	@include functions.fluid(line-height, 25px, 35px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--h4 {
+	font-family: $font-family--body;
+	font-weight: $font-weight--light;
+	// ======================================== H1
+	@include functions.fluid(font-size, 28px, 40px);
+	@include functions.fluid(line-height, 35px, 50px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--h5 {
+	font-family: $font-family--body;
+	font-weight: $font-weight--light;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 24px);
+	@include functions.fluid(line-height, 27px, 27px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--h6 {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 20px);
+	@include functions.fluid(line-height, 27px, 27px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-menu-anchor--size {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ========================================
+	@include functions.fluid(font-size, 14px, 14px);
+}
+
+@mixin font-banner-size {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ========================================
+	@include functions.fluid(font-size, 24px, 48px);
+}
+
+@mixin font-size--top-heading {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 24px, 32px);
+	@include functions.fluid(line-height, 35px, 63px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--blue-sub-heading {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 32px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--video-heading {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 14px, 32px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--feature-title {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 40px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--primary-button {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 18px, 20px);
+	@include functions.fluid(line-height, 20px, 24px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--input {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 16px, 16px);
+	@include functions.fluid(line-height, 24px, 24px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--normal {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 16px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--btnlight {
+	font-family: $font-family--body;
+	font-weight: $font-weight--light;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 16px, 16px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--small {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 14px, 14px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--gradient-title {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	// ======================================== H1
+	@include functions.fluid(font-size, 25px, 45px);
+	@include functions.fluid(line-height, 30px, 60px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--gradient-content {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 26px);
+	@include functions.fluid(line-height, 30px, 36px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--introduction-title {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 20px, 42px);
+	@include functions.fluid(line-height, 30px, 53px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--accordion-title {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 13px, 20px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--accordion-content {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 16px);
+	@include functions.fluid(line-height, 18px, 31px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--itemtitle {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 14px);
+	@include functions.fluid(line-height, 20px, 23px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--itemtitle1 {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 13px, 14px);
+	@include functions.fluid(line-height, 20px, 23px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--text {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 16px);
+	@include functions.fluid(line-height, 20px, 23px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--featureheading {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 10px, 20px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--featurecontent {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 14px, 16px);
+	@include functions.fluid(line-height, 20px, 28px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--tabfeaturecontent {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 10px, 16px);
+	@include functions.fluid(line-height, 15px, 28px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--customercontent {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 16px);
+	@include functions.fluid(line-height, 24px, 31px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--tabtitle {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 18px, 24px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--tabtitle1 {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 18px, 24px);
+	@include functions.fluid(line-height, 24px, 29px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--featuretitle {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 22px, 28px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--customertitle {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 22px, 28px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--customercontent {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 16px);
+	@include functions.fluid(line-height, 24px, 31px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--benefittitle {
+	font-family: $font-family--body;
+	font-weight: $font-weight--light;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 18px, 20px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--trustedtitle {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $capitalize;
+	// ======================================== H1
+	@include functions.fluid(font-size, 36px, 44px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--normal {
+	font-family: $font-family--body;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 14px, 16px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--normaldifferent {
+	font-family: $font-family--heading;
+	font-weight: $font-weight--normal;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 14px, 16px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--cost {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	line-height: normal;
+	text-transform: $uppercase;
+	// ======================================== H1
+	@include functions.fluid(font-size, 36px, 48px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--label {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 16px, 18px);
+	@include functions.fluid(line-height, 20px, 23px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+@mixin font-size--accordiannumber {
+	font-family: $font-family--body;
+	font-weight: $font-weight--bold;
+	line-height: normal;
+	// ======================================== H1
+	@include functions.fluid(font-size, 12px, 18px);
+	@include functions.fluid(line-height, 16px, 23px);
+	@include functions.fluid(letter-spacing, initial, initial);
+}
+
+// ANCHOR Fonts Declaretion
+.h1,
+.font-size--h1 {
+	@include font-size--h1;
+}
+
+.h2,
+.font-size--h2 {
+	@include font-size--h2;
+}
+
+.h3,
+.font-size--h3 {
+	@include font-size--h3;
+}
+
+.h4,
+.font-size--h4 {
+	@include font-size--h4;
+}
+
+.h5,
+.font-size--h5 {
+	@include font-size--h5;
+}
+
+.h6,
+.font-size--h6 {
+	@include font-size--h6;
+}
+
+.font-banner-size {
+	@include font-banner-size;
+}
+
+.font-size--input {
+	@include font-size--input;
+}
+
+.font-size--blue-sub-heading {
+	@include font-size--blue-sub-heading;
+}
+
+.font-size--feature-title {
+	@include font-size--feature-title;
+}
+
+.font-size--gradient-title {
+	@include font-size--gradient-title;
+}
+
+.font-size--gradient-content {
+	@include font-size--gradient-content;
+}
+
+.font-size--introduction-title {
+	@include font-size--introduction-title;
+}
+
+.font-size--accordion-title {
+	@include font-size--accordion-title;
+}
+
+// !SECTION
+
+/* stylelint-enable */

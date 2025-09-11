@@ -1,0 +1,243 @@
+@use "../abstracts/media-query";
+@use "../abstracts/functions";
+.o-login {
+  $o-login: &;
+  min-height: 100vh;
+  height: auto;
+  font-family: "Lato", sans-serif;
+  &__bodyarea{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    width: 100%;
+    margin: auto;
+    @include media-query.breakpoint(medium) {
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      width: 85%;
+    }
+  }
+  &__imagepart{
+    position: relative;
+    display: none;
+    @include media-query.breakpoint(medium) {
+      display: flex;
+      flex: 1;
+    }
+    img{
+      position: relative;
+      top: inherit;
+      right: inherit;
+      max-width: 100%;
+      @include media-query.breakpoint(ipad) {
+        position: absolute;
+        top: 86px;
+        right: -13%;
+        max-width: 635px;
+      }
+    }
+  }
+  &__formwrapper{
+    padding: 35px 20px;
+    border-radius: 10px;
+    background-color: rgba(57,23,154,0.69);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 549px;
+    @include media-query.breakpoint(smallg) {
+      padding: 80px 65px 70px;
+      min-height: 530px;
+    }
+    &--registration{
+      padding: 20px 25px;
+      @include media-query.breakpoint(smallg) {
+        padding: 30px 40px;
+        min-height: 530px;
+      }
+    }
+    h1{
+      font-size: 32px;
+      margin: 0 0 40px;
+      color: #2C66AB;
+      @include media-query.breakpoint(smallg) {
+        font-size: 50px;
+        margin: 0 0 30px;
+      }
+      &.registration{
+        font-size: 35px;
+        padding: 15px 0 0;
+        margin: 0 0 20px;
+        line-height: normal;
+      }
+    }
+  }
+  &__formgroup{
+    width: 100%;
+    margin-bottom: 30px;
+    &--otp{
+      display: flex;
+      gap: 10px;
+      margin: 0 0 40px;
+      @include media-query.breakpoint(smallg) {
+        gap: 18px;
+        margin: 0 0 56px;
+      }
+      @include media-query.breakpoint(medium) {
+        gap: 30px;
+      }
+    }
+    label{
+      display: block;
+      font-size: 12px;
+      text-transform: uppercase;
+      color: #fff;
+      margin: 0 0 12px;
+      text-align: left;
+      line-height: normal;
+    }
+  }
+  &__input{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    border-radius: 8px;
+    margin: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  &__grouppass{
+    position: relative;
+    #{$o-login}__input{
+      -webkit-text-security: disc;
+    }
+    
+    .eye{
+      position: absolute;
+      right: 18px;
+      top: 35%;
+      transform: translateY(-50%);
+      .show{
+        display: block;
+      }
+      .hide{
+        display: none;
+      }
+    }
+    &.showPass{
+      #{$o-login}__input{
+        -webkit-text-security:none;
+      }
+      .eye{
+        .show{
+          display: none;
+        }
+        .hide{
+          display: block;
+        }
+      }
+    }
+    &--forgotpass{
+      .eye{
+        top: 50%;
+      }
+    }
+  }
+  &__btnarea{
+    width: 190px;
+    height: 70px;
+    border-radius: 106px;
+    overflow: hidden;
+    padding: 2px;
+    background: rgb(255,255,255);
+    background: linear-gradient(145deg, rgba(255,255,255,1) 0%, rgba(138,86,248,1) 30%);
+    margin: auto;
+    &--forgotpass{
+      width: 279px;
+      margin: 15px auto 25px;
+      @include media-query.breakpoint(smallg) {
+        margin: 20px auto 50px;
+      }
+    }
+    span{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 106px;
+      overflow: hidden;
+      &:before{
+        position: absolute;
+        content: "";
+        width: 200%;
+        height: 400%;
+        background: rgb(216,61,255);
+        background: radial-gradient(circle, rgba(216,61,255,1) 0%, rgba(138,86,248,1) 38%);
+        left: -50%;
+        top: -230%;
+    }
+    }
+    &--registration{
+        height: 60px;
+        margin: 20px auto 0;
+    }
+  }
+  &__button{
+    position: relative;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size:20px;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    text-transform: uppercase;
+    &--registration{
+      font-size: 16px;
+    }
+  }
+  &__bottomtext{
+    display: block;
+    margin: 35px 0 0;
+    font-size:14px;
+    color: #fff;
+    a{
+      display: inline-block;
+      color: #BB9BFF;
+      &:hover{
+        color: #D83DFF;
+        text-decoration: underline;
+      }
+    }
+  }
+  &__forgetpass{
+    width: 100%;
+    text-align: right;
+    display: block;
+    a{
+      font-size: 12px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: capitalize;
+      &:hover{
+        text-decoration: underline;
+        color: #d83dff;
+      }
+    }
+  }
+  &__forgetsubheading{
+    color: #fff;
+    margin: 0 0 30px;
+    display: block;
+    text-align: center;
+    @include media-query.breakpoint(smallg) {
+      margin: 0 0 60px;
+    }
+  }
+}

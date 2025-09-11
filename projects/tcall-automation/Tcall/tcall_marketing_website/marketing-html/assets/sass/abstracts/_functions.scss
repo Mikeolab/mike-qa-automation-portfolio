@@ -1,0 +1,73 @@
+@use "media-query";
+@use "sass:math";
+@use "sass:list";
+
+$default-min-bp: 600px;
+$default-max-bp: 1920px;
+
+@function round($number, $decimals: 0) {
+	$n: 1;
+	@if $decimals > 0 {
+		@for $i from 1 through $decimals {
+			$n: $n * 10;
+		}
+	}
+	@return math.div(math.round($number * $n), $n);
+}
+
+@function px-to-rem($px) {
+	$rems: math.div($px, 16px) * 1rem;
+	@return $rems;
+}
+
+@mixin fluid($property, $min-size, $max-size, $min-breakpoint: $default-min-bp, $max-breakpoint: $default-max-bp, $unit: vw) {
+	@if $min-size == initial or $max-size == initial {
+		#{$property}: initial;
+	}
+	@else if $min-size == $max-size {
+		#{$property}: #{$max-size};
+	}
+	@else {
+		$slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+		$slope-to-unit: round($slope * 100, 2);
+		$intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 2);
+		$min-size-rem: round(px-to-rem($min-size), 2);
+		$max-size-rem: round(px-to-rem($max-size), 2);
+
+		#{$property}: #{"min(max(#{$min-size},#{$slope-to-unit}#{$unit} + #{$intercept-rem}), #{$max-size})"};
+		#{$property}: clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+	}
+}
+
+$default-position: bottom, left;
+
+// Add the gap to both the flex group and flex item
+// @include functions.gap(group, 10px);
+// @include functions.gap(item, 10px);
+@mixin gap($flex-type, $size, $position: $default-position) {
+	@if $flex-type == group {
+		@each $pos in $position {
+			margin-#{$pos}: calc(-1 * #{$size});
+		}
+	}
+	@if $flex-type == item {
+		@each $pos in $position {
+			margin-#{$pos}: #{$size};
+		}
+	}
+}
+
+@function torem($pxValue) {
+	@return math.div($pxValue, 16px) * 1rem; 
+}
+
+@function to-clamp($smallest-size, $largest-size) {
+	$min-width: media-query.$to-clamp-function-site-width--small;
+	$max-width: media-query.$to-clamp-function-site-width;
+	$size-at-min-width: $smallest-size;
+	$size-at-max-width: $largest-size;
+	$slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
+	$y-axis: -1 * $min-width * $slope + $size-at-min-width;
+	$return-value: clamp(#{$size-at-min-width}, #{$y-axis} + #{$slope} * 100vw, #{$size-at-max-width});
+	@return $return-value;
+}

@@ -1,0 +1,62 @@
+{
+  "name": "medcor-healthcare",
+  "version": "1.0.0",
+  "description": "Medcor healthcare platform testing with HIPAA compliance validation",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:parallel": "cypress run --parallel --record",
+    "test:compliance": "cypress run --spec 'cypress/e2e/compliance/**/*.spec.ts'",
+    "test:roles": "cypress run --spec 'cypress/e2e/role-based/**/*.spec.ts'",
+    "build": "tsc",
+    "lint": "eslint . --ext .ts,.js",
+    "lint:fix": "eslint . --ext .ts,.js --fix",
+    "type-check": "tsc --noEmit",
+    "report": "mochawesome-merge cypress/results/*.json -o cypress/results/merged-report.json && marge cypress/results/merged-report.json --reportDir cypress/reports --inline",
+    "clean": "rm -rf cypress/results cypress/screenshots cypress/videos cypress/reports",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:build": "docker-compose build",
+    "setup:test-data": "node scripts/setup-test-data.js",
+    "encrypt:data": "node scripts/encrypt-test-data.js",
+    "audit:compliance": "node scripts/compliance-audit.js"
+  },
+  "keywords": [
+    "medcor",
+    "healthcare",
+    "hipaa",
+    "compliance",
+    "cypress",
+    "role-based-testing",
+    "patient-data"
+  ],
+  "author": "Mike",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "mochawesome": "^7.0.0",
+    "mochawesome-merge": "^4.0.0",
+    "marge": "^4.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "dotenv": "^16.0.0",
+    "axios": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "pg": "^8.11.0",
+    "nodemon": "^3.0.0"
+  }
+}

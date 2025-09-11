@@ -1,0 +1,237 @@
+@use "z-index";
+@use "functions";
+@use "colors";
+
+// Transitions
+$transition-cubic: cubic-bezier(0, 0, .2, 1);
+$transition-smooth: .8s ease;
+
+// Animations
+@mixin animate($animation, $duration, $method, $times) {
+	animation: $animation $duration $method $times;
+}
+
+// Keyframes
+@mixin keyframes($name) {
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin footer-animation($animationFooter) {
+	@keyframes #{$animationFooter} {
+		0% {
+			background-position: 0% 50%;
+		}
+
+		50% {
+			background-position: 100% 50%;
+		}
+
+		100% {
+			background-position: 0% 50%;
+		}
+	}
+}
+
+@mixin transition-left($width: 100%, $height: 100%, $left: 0, $top: 0) {
+	top: $top;
+	left: $left;
+	width: $width;
+	height: $height;
+}
+
+@mixin transition-right($width: 100%, $height: 100%, $right: 0, $top: 0) {
+	top: $top;
+	right: $right;
+	width: $width;
+	height: $height;
+}
+
+.verticle-animation-small {
+	animation: topJump 3s ease-in-out 1s 1 forwards, jumpContinue 3s ease-in-out 4s alternate infinite;
+	display: block;
+}
+
+@keyframes topJump {
+	0% {
+		transform: translateY(0);
+	}
+  
+	66% {
+		transform: translateY(-5%);
+	}
+  
+	70% {
+		transform: translateY(-5%);
+	}
+  
+	100% {
+		transform: translateY(-3%);
+	}
+}
+
+@keyframes jumpContinue {
+	from {
+		transform: translateY(-3%);
+	}
+  
+	to {
+		transform: translateY(-6%);
+	}
+}
+  
+.horizontal-animation-small {
+	animation: sideJump 3s ease-in-out 1s 1 forwards, sideJumpContinue 2s ease-in-out 4s alternate infinite;
+	display: block;
+}
+
+@keyframes sideJump {
+	0% {
+		transform: translateX(0);
+	}
+  
+	66% {
+		transform: translateX(-20%);
+	}
+  
+	70% {
+		transform: translateX(-20%);
+	}
+  
+	100% {
+		transform: translateX(-15%);
+	}
+}
+
+@keyframes sideJumpContinue {
+	from {
+		transform: translateX(-15%);
+	}
+  
+	to {
+		transform: translateX(-25%);
+	}
+}
+
+.animation-phone-trin {
+	animation-name: inherit;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes phone-trin {
+
+	from {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+
+	20%,
+	32%,
+	44%,
+	56%,
+	68% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+
+	23%,
+	35%,
+	47%,
+	59%,
+	71% {
+		transform: rotate3d(0, 0, 1, 15deg);
+	}
+
+	26%,
+	38%,
+	50%,
+	62%,
+	74% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+
+	29%,
+	41%,
+	53%,
+	65%,
+	77% {
+		transform: rotate3d(0, 0, 1, -15deg);
+	}
+
+	80% {
+		transform: rotate3d(0, 0, 1, 0deg);
+	}
+}
+
+.o-plane-fly {
+	$o-plane-fly: &;
+
+	position: relative;
+	width: functions.torem(60px);
+	height: functions.torem(25px);
+	text-align: right;
+	transform: rotate(346deg);
+	float: right;
+
+	&__arrow {
+		position: absolute;
+		width: functions.torem(8px);
+		height: functions.torem(3px);
+		background-color: colors.$white;
+		border-radius: functions.torem(5px);
+
+		&--arrow1 {	
+			top: functions.torem(15px);
+			animation: none;
+			left: functions.torem(5px);
+		}
+
+		&--arrow2 {
+			top: functions.torem(20px);
+			animation: none;
+			left: functions.torem(10px);
+			animation-delay: 1s;
+		}
+	}
+}
+
+.fly-open {
+	&:hover {
+		.o-plane-fly__arrow--arrow1 {
+			animation: moveArrow1 2s infinite;
+		}
+
+		.o-plane-fly__arrow--arrow2 {
+			animation: moveArrow2 2s infinite cubic-bezier(.42, 0, .58, 1);
+		}
+	}
+}
+
+.phone-trin-hover {
+	&:hover {
+		.animation-phone-trin {
+			animation-name: phone-trin;
+		}
+	}
+}
+
+@keyframes moveArrow1 {
+	0% {
+		left: functions.torem(5px);
+	}
+
+	100% {
+		left: 0;
+	}
+}
+  
+@keyframes moveArrow2 {
+	0% {
+		left: functions.torem(10px);
+	}
+
+	100% {
+		left: functions.torem(2px);
+	}
+}

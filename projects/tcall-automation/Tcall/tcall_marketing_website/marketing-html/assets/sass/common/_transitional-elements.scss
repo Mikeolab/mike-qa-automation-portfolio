@@ -1,0 +1,93 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/media-query";
+@use "../abstracts/spacing";
+@use "../abstracts/fonts";
+@use "../abstracts/anchors";
+@use "../abstracts/shadows";
+@use "../abstracts/buttons";
+@use "../abstracts/z-index";
+@use "../abstracts/animations";
+@use "../abstracts/border-radius";
+
+.o-transitional-circle {
+	$o-transitional-circle: &;
+
+	&__variations-left {
+		position: absolute;
+
+		&--one {
+			z-index: z-index.$on-top;
+			opacity: .55;
+			transition: transform 20s ease-in-out;
+			@include media-query.breakpoint(small) {
+				@include animations.transition-left($top: functions.torem(450px), $left: functions.torem(130px), $width: functions.torem(37px), $height: functions.torem(37px));
+			}
+		}
+
+		&--two {
+			transition: transform 20s ease-in-out;
+			@include media-query.breakpoint(small) {
+				display: block;
+				@include animations.transition-left($top: functions.torem(-120px), $left: functions.torem(680px), $width: functions.torem(15px), $height: functions.torem(15px));
+			}
+		}
+	}
+
+	&__variations-right {
+		position: absolute;
+
+		&--one {
+			z-index: z-index.$takeover;
+			opacity: .8;
+			transition: transform 15s ease-in-out;
+			@include animations.transition-right($top: functions.torem(340px), $right: functions.torem(40px), $width: functions.torem(76px), $height: functions.torem(76px));
+			@include media-query.breakpoint(smallg) {
+				display: block;
+				@include animations.transition-right($top: functions.torem(500px), $right: functions.torem(150px), $width: functions.torem(106px), $height: functions.torem(106px));
+			}
+		}
+
+		&--two {
+			// z-index: z-index.$takeover;
+			// opacity: .8;
+			transition: transform 20s ease-in-out;
+			@include media-query.breakpoint(large) {
+				display: block;
+				@include animations.transition-right($top: functions.torem(700px), $right: 40%, $width: functions.torem(19px), $height: functions.torem(19px));
+			}
+		}
+
+		&--shapehow2 {
+			z-index: z-index.$takeover;
+			opacity: .8;
+			transition: transform 15s ease-in-out;
+			@include media-query.breakpoint(large) {
+				display: block;
+				@include animations.transition-right($top: functions.torem(40px), $right: functions.torem(210px), $width: functions.torem(79px), $height: functions.torem(79px));
+			}
+		}
+	}
+}
+
+.half-transition-circle {
+	animation: rotateCircle 20s infinite linear;
+}
+
+@keyframes rotateCircle {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	35% {
+		transform: rotate(25deg);
+	}
+
+	70% {
+		transform: rotate(-45deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}

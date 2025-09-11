@@ -1,0 +1,201 @@
+name: Medcor Healthcare Platform Comprehensive Testing Suite
+
+# Comprehensive E2E testing for all Medcor user roles and dashboards
+# Tests Super User, Patient, Doctor, and Hospital Admin workflows
+
+on:
+  schedule:
+    # Run every day at 3 AM UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to test'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+        - both
+      test_suite:
+        description: 'Test suite to run'
+        required: true
+        default: 'comprehensive'
+        type: choice
+        options:
+        - smoke
+        - comprehensive
+        - security
+        - performance
+        - integration
+        - all
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  medcor-comprehensive-testing:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        environment: [staging, production]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Verify multi-role testing version
+      run: echo "Running Medcor Healthcare Platform Comprehensive Testing Suite - All User Roles and Dashboards"
+      
+    - name: Run Smoke Tests
+      if: matrix.environment == 'staging' && (github.event.inputs.test_suite == 'smoke' || github.event.inputs.test_suite == 'all')
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_working_smoke.cy.js
+        env: environment=staging
+      env:
+        MEDCOR_STAGING_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_STAGING_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_STAGING_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_STAGING_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_STAGING_PATIENT_EMAIL: ${{ secrets.MEDCOR_STAGING_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_STAGING_PATIENT_PASSWORD: ${{ secrets.MEDCOR_STAGING_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_DOCTOR_EMAIL: ${{ secrets.MEDCOR_STAGING_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_STAGING_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_STAGING_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Run Comprehensive Tests
+      if: matrix.environment == 'staging' && (github.event.inputs.test_suite == 'comprehensive' || github.event.inputs.test_suite == 'all')
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_comprehensive_all_endpoints.cy.js
+        env: environment=staging
+      env:
+        MEDCOR_STAGING_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_STAGING_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_STAGING_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_STAGING_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_STAGING_PATIENT_EMAIL: ${{ secrets.MEDCOR_STAGING_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_STAGING_PATIENT_PASSWORD: ${{ secrets.MEDCOR_STAGING_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_DOCTOR_EMAIL: ${{ secrets.MEDCOR_STAGING_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_STAGING_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_STAGING_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Run Security Tests
+      if: matrix.environment == 'staging' && (github.event.inputs.test_suite == 'security' || github.event.inputs.test_suite == 'all')
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_working_security.cy.js
+        env: environment=staging
+      env:
+        MEDCOR_STAGING_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_STAGING_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_STAGING_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_STAGING_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_STAGING_PATIENT_EMAIL: ${{ secrets.MEDCOR_STAGING_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_STAGING_PATIENT_PASSWORD: ${{ secrets.MEDCOR_STAGING_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_DOCTOR_EMAIL: ${{ secrets.MEDCOR_STAGING_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_STAGING_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_STAGING_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Run Performance Tests
+      if: matrix.environment == 'staging' && (github.event.inputs.test_suite == 'performance' || github.event.inputs.test_suite == 'all')
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_working_performance.cy.js
+        env: environment=staging
+      env:
+        MEDCOR_STAGING_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_STAGING_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_STAGING_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_STAGING_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_STAGING_PATIENT_EMAIL: ${{ secrets.MEDCOR_STAGING_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_STAGING_PATIENT_PASSWORD: ${{ secrets.MEDCOR_STAGING_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_DOCTOR_EMAIL: ${{ secrets.MEDCOR_STAGING_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_STAGING_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_STAGING_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Run Integration Tests
+      if: matrix.environment == 'staging' && (github.event.inputs.test_suite == 'integration' || github.event.inputs.test_suite == 'all')
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_working_integration.cy.js
+        env: environment=staging
+      env:
+        MEDCOR_STAGING_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_STAGING_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_STAGING_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_STAGING_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_STAGING_PATIENT_EMAIL: ${{ secrets.MEDCOR_STAGING_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_STAGING_PATIENT_PASSWORD: ${{ secrets.MEDCOR_STAGING_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_DOCTOR_EMAIL: ${{ secrets.MEDCOR_STAGING_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_STAGING_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_STAGING_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_STAGING_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Run Production Tests
+      if: matrix.environment == 'production'
+      uses: cypress-io/github-action@v6
+      with:
+        install: true
+        browser: electron
+        headless: true
+        spec: cypress/e2e/medcor_api_working_e2e.cy.js
+        env: environment=production
+      env:
+        MEDCOR_PRODUCTION_SUPERUSER_EMAIL: ${{ secrets.MEDCOR_PRODUCTION_SUPERUSER_EMAIL || 'zeynel@medcorhospital.com' }}
+        MEDCOR_PRODUCTION_SUPERUSER_PASSWORD: ${{ secrets.MEDCOR_PRODUCTION_SUPERUSER_PASSWORD || '12345678@' }}
+        MEDCOR_PRODUCTION_PATIENT_EMAIL: ${{ secrets.MEDCOR_PRODUCTION_PATIENT_EMAIL || 'patient.davis@email.com' }}
+        MEDCOR_PRODUCTION_PATIENT_PASSWORD: ${{ secrets.MEDCOR_PRODUCTION_PATIENT_PASSWORD || 'password123' }}
+        MEDCOR_PRODUCTION_DOCTOR_EMAIL: ${{ secrets.MEDCOR_PRODUCTION_DOCTOR_EMAIL || 'dr.johnson@medcor.com' }}
+        MEDCOR_PRODUCTION_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_PRODUCTION_DOCTOR_PASSWORD || 'password123' }}
+        MEDCOR_PRODUCTION_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_PRODUCTION_HOSPITAL_ADMIN_EMAIL || 'admin@medcor.com' }}
+        MEDCOR_PRODUCTION_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_PRODUCTION_HOSPITAL_ADMIN_PASSWORD || 'admin123' }}
+        
+    - name: Generate Test Reports
+      run: |
+        echo "Generating Medcor test reports..."
+        node generate-pdf-report.js || echo "PDF generation failed, continuing..."
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: medcor-test-results-${{ matrix.environment }}
+        path: |
+          cypress/screenshots/
+          cypress/videos/
+          cypress/reports/
+          *.pdf
+          *.md
+          
+    - name: Upload test reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: medcor-test-reports-${{ matrix.environment }}
+        path: |
+          Medcor_API_Complete_Comprehensive_Report.pdf
+          Medcor_API_Test_Report.pdf
+          Final_Comprehensive_Test_Report.md
+          API_Test_Report_September_2025.md

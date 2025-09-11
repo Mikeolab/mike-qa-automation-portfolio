@@ -1,0 +1,72 @@
+{
+    "subscription_plans": [
+        {
+            "title": "Free Plan",
+            "price": 0.0,
+            "description": "FREE PLAN - 5 CALLS; 3 AGENTS CAN BE CREATED; 8 MINUTES CALL IN TOTAL; NO TECHNICAL SUPPORT;",
+            "is_active": true,
+            "is_popular": false,
+            "features": {
+                "max_calls": 5,
+                "max_agents": 3,
+                "max_call_duration_minutes": 8,
+                "technical_support": false,
+                "international_numbers": 0,
+                "turkish_numbers": 0,
+                "bulk_calls": false
+            }
+        },
+        {
+            "title": "Pro Plan",
+            "price": 49.0,
+            "description": "PRO PLAN - 1 INTERNATIONAL NUMBER; 10 CALLS MONTHLY; 20 AGENTS CREATED; 20 MINUTES CALL MONTHLY; TECHNICAL SUPPORT;",
+            "is_active": true,
+            "is_popular": true,
+            "features": {
+                "max_calls": 10,
+                "max_agents": 20,
+                "max_call_duration_minutes": 20,
+                "technical_support": true,
+                "international_numbers": 1,
+                "turkish_numbers": 0,
+                "bulk_calls": false
+            }
+        },
+        {
+            "title": "Business Plan",
+            "price": 79.0,
+            "description": "BUSINESS PLAN - 3 INTERNATIONAL NUMBERS; 1 TURKISH NUMBER; 30 AGENTS MONTHLY; TECHNICAL SUPPORT; BULK CALLS;",
+            "is_active": true,
+            "is_popular": false,
+            "features": {
+                "max_calls": "unlimited",
+                "max_agents": 30,
+                "max_call_duration_minutes": "unlimited",
+                "technical_support": true,
+                "international_numbers": 3,
+                "turkish_numbers": 1,
+                "bulk_calls": true
+            }
+        },
+        {
+            "title": "Enterprise Plan",
+            "price": "Contact Sales",
+            "description": "ENTERPRISE PLAN - CUSTOM NUMBER OF CALLS; AGENT CREATION CUSTOM; CALL DURATION CUSTOM; TECHNICAL SUPPORT; TALK TO SALES TEAM FOR CUSTOM PRICING AND FEATURES;",
+            "is_active": true,
+            "is_popular": false,
+            "is_custom": true,
+            "contact_sales": true,
+            "features": {
+                "max_calls": "custom",
+                "max_agents": "custom",
+                "max_call_duration_minutes": "custom",
+                "technical_support": true,
+                "international_numbers": "custom",
+                "turkish_numbers": "custom",
+                "bulk_calls": true,
+                "custom_pricing": true,
+                "dedicated_support": true
+            }
+        }
+    ]
+}

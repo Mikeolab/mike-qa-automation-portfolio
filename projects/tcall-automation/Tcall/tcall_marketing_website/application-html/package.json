@@ -1,0 +1,26 @@
+{
+    "name": "your-django-project",
+    "version": "1.0.0",
+    "description": "A Django project with Gulp build process for SCSS and JS",
+    "main": "gulpfile.js",
+    "scripts": {
+        "build": "gulp build",
+        "watch": "gulp watch",
+        "start": "gulp"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "gulp": "^4.0.2",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2"
+    },
+    "dependencies": {
+        "sass": "^1.32.0"
+    },
+    "keywords": []
+}

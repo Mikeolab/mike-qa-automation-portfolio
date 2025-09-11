@@ -1,0 +1,150 @@
+name: TCall Admin Workflow Testing
+
+# Dedicated workflow for admin functionality testing
+# Tests admin login, user management, agent management, and all admin workflows
+
+on:
+  schedule:
+    # Run every day at 3 AM UTC (1 hour after main E2E tests)
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to test'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+        - development
+        - staging
+        - production
+        - all
+
+env:
+  NODE_VERSION: '18'
+
+jobs:
+  admin-workflow-testing:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        environment: [development, staging, production]
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Verify admin workflow version
+      run: echo "Running TCall Admin Workflow Testing - Comprehensive Admin User Flow Testing"
+      
+    - name: Run Admin Workflow Tests - Development
+      if: matrix.environment == 'development'
+      uses: cypress-io/github-action@v6
+      with:
+        spec: cypress/e2e/full_onboarding/tcall.admin.workflow.cy.js
+        config-file: cypress.config.js
+        browser: electron
+        headless: true
+        record: false
+        env: |
+          CYPRESS_BASE_URL=https://api.dev.tcall.ai:8006
+          CYPRESS_ADMIN_EMAIL=admin@tcall.ai
+          CYPRESS_ADMIN_PASSWORD=admin123
+      env:
+        CYPRESS_BASE_URL: https://api.dev.tcall.ai:8006
+        CYPRESS_ADMIN_EMAIL: admin@tcall.ai
+        CYPRESS_ADMIN_PASSWORD: admin123
+        
+    - name: Run Admin Workflow Tests - Staging
+      if: matrix.environment == 'staging'
+      uses: cypress-io/github-action@v6
+      with:
+        spec: cypress/e2e/full_onboarding/tcall.admin.workflow.cy.js
+        config-file: cypress.config.js
+        browser: electron
+        headless: true
+        record: false
+        env: |
+          CYPRESS_BASE_URL=https://test.tcall.ai
+          CYPRESS_ADMIN_EMAIL=admin@tcall.ai
+          CYPRESS_ADMIN_PASSWORD=admin123
+      env:
+        CYPRESS_BASE_URL: https://test.tcall.ai
+        CYPRESS_ADMIN_EMAIL: admin@tcall.ai
+        CYPRESS_ADMIN_PASSWORD: admin123
+        
+    - name: Run Admin Workflow Tests - Production
+      if: matrix.environment == 'production'
+      uses: cypress-io/github-action@v6
+      with:
+        spec: cypress/e2e/full_onboarding/tcall.admin.workflow.cy.js
+        config-file: cypress.config.js
+        browser: electron
+        headless: true
+        record: false
+        env: |
+          CYPRESS_BASE_URL=https://tcall.ai
+          CYPRESS_ADMIN_EMAIL=admin@tcall.ai
+          CYPRESS_ADMIN_PASSWORD=admin123
+      env:
+        CYPRESS_BASE_URL: https://tcall.ai
+        CYPRESS_ADMIN_EMAIL: admin@tcall.ai
+        CYPRESS_ADMIN_PASSWORD: admin123
+        
+    - name: Upload Admin Test Results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: admin-workflow-test-results-${{ matrix.environment }}
+        path: |
+          cypress/screenshots/
+          cypress/videos/
+          cypress/reports/
+        retention-days: 30
+        
+    - name: Generate Admin Test Report
+      if: always()
+      run: |
+        echo "# TCall Admin Workflow Test Results" > admin-test-report.md
+        echo "" >> admin-test-report.md
+        echo "**Environment:** ${{ matrix.environment }}" >> admin-test-report.md
+        echo "**Date:** $(date)" >> admin-test-report.md
+        echo "**Status:** ${{ job.status }}" >> admin-test-report.md
+        echo "" >> admin-test-report.md
+        echo "## Test Coverage" >> admin-test-report.md
+        echo "- ✅ Admin Authentication (Login & Profile)" >> admin-test-report.md
+        echo "- ✅ Admin Dashboard Access" >> admin-test-report.md
+        echo "- ✅ Admin User Management" >> admin-test-report.md
+        echo "- ✅ Admin Agent Management" >> admin-test-report.md
+        echo "- ✅ Admin Call Management" >> admin-test-report.md
+        echo "- ✅ Admin Phone Number Management" >> admin-test-report.md
+        echo "- ✅ Admin Personal Settings" >> admin-test-report.md
+        echo "- ✅ Admin Performance Testing" >> admin-test-report.md
+        echo "- ✅ Admin Security Testing" >> admin-test-report.md
+        echo "- ✅ Admin Analytics and Reporting" >> admin-test-report.md
+        echo "- ✅ Admin Workflow Integration" >> admin-test-report.md
+        echo "" >> admin-test-report.md
+        echo "## Admin Credentials Used" >> admin-test-report.md
+        echo "- **Email:** admin@tcall.ai" >> admin-test-report.md
+        echo "- **Password:** admin123" >> admin-test-report.md
+        echo "- **Role:** admin" >> admin-test-report.md
+        
+    - name: Upload Admin Test Report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: admin-test-report-${{ matrix.environment }}
+        path: admin-test-report.md
+        retention-days: 30
+
+

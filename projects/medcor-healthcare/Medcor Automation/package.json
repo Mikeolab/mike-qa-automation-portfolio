@@ -1,0 +1,43 @@
+{
+  "name": "medcor-healthcare-platform-e2e",
+  "version": "1.0.0",
+  "description": "Medcor Healthcare Platform E2E Testing Suite",
+  "main": "index.js",
+  "scripts": {
+    "test:smoke": "cypress run --spec 'cypress/e2e/medcor_api_working_smoke.cy.js'",
+    "test:comprehensive": "cypress run --spec 'cypress/e2e/medcor_api_comprehensive_all_endpoints.cy.js'",
+    "test:security": "cypress run --spec 'cypress/e2e/medcor_api_working_security.cy.js'",
+    "test:performance": "cypress run --spec 'cypress/e2e/medcor_api_working_performance.cy.js'",
+    "test:integration": "cypress run --spec 'cypress/e2e/medcor_api_working_integration.cy.js'",
+    "test:edge-cases": "cypress run --spec 'cypress/e2e/medcor_api_edge_cases.cy.js'",
+    "test:e2e": "cypress run --spec 'cypress/e2e/medcor_api_working_e2e.cy.js'",
+    "test:all": "npm run test:smoke && npm run test:comprehensive && npm run test:security && npm run test:performance && npm run test:integration && npm run test:edge-cases",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "report:generate": "node generate-pdf-report.js"
+  },
+  "keywords": [
+    "medcor",
+    "healthcare",
+    "e2e",
+    "testing",
+    "cypress",
+    "api",
+    "automation"
+  ],
+  "author": "Medcor QA Team",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^13.17.0",
+    "cypress-mochawesome-reporter": "^3.6.0"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}
+
+
+
+
+
+

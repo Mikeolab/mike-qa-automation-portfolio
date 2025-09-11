@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 20" width="91" height="20">
+	<title>wave-svg</title>
+	<defs>
+		<image  width="91" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFsAAAAUAQMAAADY9tNjAAAAAXNSR0IB2cksfwAAAAZQTFRFGxZJGxZJxiE+cAAAAAJ0Uk5T/wDltzBKAAAAlElEQVR4nGNkQAKMDAwOBxhjF0E5jM57mP/MzIBwWP3XMf75yQHhyJpfm+rAsDABzJF36BFhYHgsB+E8AGtubABx/kOMfagA5PB/gFoCNIPxP8LOh4y8n6DMjwJAPfUNMKfATQOKgzhST0Gcgw4Q2eVhTAx/WaBKF/6YduCqDZTT0MA9Z+YBmCEMDK27kTgNCOPhHAAPQCj1jS1M5AAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+	</style>
+	<use id="Layer 1" href="#img1" x="0" y="0"/>
+</svg>

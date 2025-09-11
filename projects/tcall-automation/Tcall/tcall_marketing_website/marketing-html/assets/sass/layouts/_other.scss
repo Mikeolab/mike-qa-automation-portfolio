@@ -1,0 +1,54 @@
+@use "../abstracts/colors";
+@use "../abstracts/functions";
+@use "../abstracts/media-query";
+@use "../abstracts/spacing";
+@use "../abstracts/fonts";
+@use "../abstracts/anchors";
+@use "../abstracts/shadows";
+@use "../abstracts/buttons";
+@use "../abstracts/z-index";
+@use "../abstracts/animations";
+@use "../abstracts/border-radius";
+
+.o-general {
+	$o-general: &;
+
+	position: relative;
+	background: rgb(87,113,195);
+	background: linear-gradient(0deg, rgba(87,113,195,1) 36%, rgba(180,211,244,1) 100%);
+    
+	&__spacing {
+		padding: functions.torem(180px) 0 functions.torem(20px);
+	}
+
+	&__heading {
+		margin-bottom: functions.torem(25px);
+		color: colors.$blue-text-color;
+		font-size: functions.torem(54px);
+		text-align: center;
+		text-transform: fonts.$uppercase;
+		@include media-query.breakpoint(smallg) {
+			margin-bottom: functions.torem(40px);
+		}
+	}
+
+	&__contentwrapper {
+		padding: functions.torem(30px);
+		background-color: colors.$white;
+		border-radius: border-radius.$border-radius--sbtn;
+	}
+
+	&__title {
+		margin-bottom: functions.torem(12px);
+		color: colors.$black;
+		font-size: functions.torem(14px);
+		text-transform: fonts.$uppercase;
+	}
+
+	&__content {
+		margin-bottom: functions.torem(25px);
+		color: colors.$black;
+		font-size: functions.torem(14px);
+		line-height: functions.torem(24px);
+	}
+}

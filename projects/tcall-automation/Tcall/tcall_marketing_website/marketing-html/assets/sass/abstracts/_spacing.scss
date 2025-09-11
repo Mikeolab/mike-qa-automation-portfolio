@@ -1,0 +1,71 @@
+@use "../abstracts/functions";
+@use "../abstracts/media-query";
+
+@mixin site-width {
+	max-width: functions.torem(1140px);
+}
+
+@mixin wrapper-width {
+	max-width: media-query.$wrapper-width;
+}
+
+// Set our padding for the containers and main content
+//removed usage in _site_width.css -Jas
+@mixin site-padding {
+	width: 100%;
+	margin: 0 auto;
+	padding-right: 25px;
+	padding-left: 25px;
+	@include media-query.breakpoint(small) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@mixin site-padding-small {
+	margin: 0 auto;
+	padding-right: 10px;
+	padding-left: 10px;
+	@include media-query.breakpoint(small) {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+@mixin block-vertical-margins {
+	margin-top: 27px;
+	margin-bottom: 27px;
+	@include media-query.breakpoint(small) {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+}
+
+@mixin block-vertical-paddings-large {
+	padding-top: functions.torem(90px);
+	padding-bottom: functions.torem(90px);
+	@include media-query.breakpoint(small) {
+		padding-top: functions.torem(200px);
+		padding-bottom: functions.torem(200px);
+	}
+}
+
+@mixin block-horizontal-margins {
+	margin-right: 10px;
+	margin-left: 10px;
+	@include media-query.breakpoint(small) {
+		margin-right: 30px;
+		margin-left: 30px;
+	}
+}
+
+@mixin content-width {
+	box-sizing: border-box;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	@include media-query.breakpoint(medium) {
+		max-width: media-query.$site-width;
+		padding-right: 20%;
+	}
+}

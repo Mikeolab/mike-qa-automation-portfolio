@@ -1,0 +1,44 @@
+/**
+	HOW TO USE THIS MIXIN?
+
+	.item {
+		// If we have 2 items...
+		@include if(2) {
+			width: 50%;
+		}
+
+		// If we have 3 items...
+		@include if(3) {
+			width: 50%;
+			// ...But, would like the last item to be full width!
+			&:last-child {
+				width: 100%;
+			}
+		}
+
+		// If we have 4 items...
+		@include if(4) {
+			width: 25%;
+		} 
+	}
+
+	You can also pass multiple arguments
+
+	.item {
+		// if 1 or 2 items exist
+		@include if(1, 2) {
+			width: 50%;
+		}    
+	}
+*/
+@mixin if($args...) {
+	@each $arg in $args {
+		@if type-of($arg) == number {
+			@for $i from 1 through $arg {
+				&:nth-child(#{$i}):nth-last-child(#{$arg - $i + 1}) {
+					@content;
+				}
+			}
+		}
+	}
+}
