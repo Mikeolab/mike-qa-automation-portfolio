@@ -37,7 +37,7 @@ describe('TCall Platform - Complete Endpoint Validation (175+ Endpoints)', () =>
       method: 'POST',
       url: `${Cypress.config('baseUrl')}/api/auth/login/`,
       body: {
-        email: Cypress.env('ADMIN_EMAIL') || 'test-admin@tcall.ai',
+        email: Cypress.env('ADMIN_EMAIL') || 'admin@tcall.ai',
         password: Cypress.env('ADMIN_PASSWORD') || 'admin123'
       },
       headers: {
