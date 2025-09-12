@@ -217,8 +217,8 @@ describe('TCall Platform - COMPREHENSIVE Endpoint Testing (ALL 175 Endpoints)', 
         method: 'POST',
         url: `${Cypress.config('baseUrl')}/api/auth/login/`,
         body: {
-          email: 'test-admin@tcall.ai',
-          password: 'test-password-123'
+          email: Cypress.env('ADMIN_EMAIL') || 'test-admin@tcall.ai',
+          password: Cypress.env('ADMIN_PASSWORD') || 'test-password-123'
         },
         headers: {
           'Content-Type': 'application/json'
@@ -262,7 +262,7 @@ describe('TCall Platform - COMPREHENSIVE Endpoint Testing (ALL 175 Endpoints)', 
         method: 'POST',
         url: `${Cypress.config('baseUrl')}/api/auth/password-reset/`,
         body: {
-          email: 'test-admin@tcall.ai'
+          email: Cypress.env('ADMIN_EMAIL') || 'test-admin@tcall.ai'
         },
         headers: {
           'Content-Type': 'application/json'
