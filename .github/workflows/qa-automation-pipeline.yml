@@ -69,6 +69,9 @@ jobs:
             cd Tcall/e2e
             echo "Installing TCall e2e dependencies..."
             npm install || echo "Dependencies installation completed with warnings"
+            echo "Current directory: $(pwd)"
+            echo "Checking for test files:"
+            ls -la cypress/e2e/ || echo "cypress/e2e directory not found"
             if [ "${{ matrix.browser }}" = "chrome" ]; then
               echo "📋 TCALL STAGING - ALL 175 ENDPOINTS"
               echo "🌐 Environment: https://api.dev.tcall.ai:8006"
@@ -89,6 +92,9 @@ jobs:
             cd "Medcor Automation"
             echo "Installing Medcor dependencies..."
             npm install || echo "Dependencies installation completed with warnings"
+            echo "Current directory: $(pwd)"
+            echo "Checking for test files:"
+            ls -la cypress/e2e/ || echo "cypress/e2e directory not found"
             npx cypress run --spec 'cypress/e2e/medcor-comprehensive-endpoint-testing.cy.js' || echo "⚠️ Medcor comprehensive endpoint tests completed with warnings"
           else
             echo "Running basic tests for ${{ matrix.project }}"
