@@ -63,15 +63,32 @@ jobs:
 
       - name: 🧪 Run Comprehensive Endpoint Tests
         run: |
+          echo "Starting test execution for ${{ matrix.project }}"
+          echo "Root directory: $(pwd)"
+          echo "Listing projects directory:"
+          ls -la projects/ || echo "projects directory not found"
+          
           cd projects/${{ matrix.project }}
+          echo "Changed to project directory: $(pwd)"
+          
           if [ "${{ matrix.project }}" = "tcall-automation" ]; then
             echo "🚀 RUNNING TCALL COMPREHENSIVE ENDPOINT TESTS - ${{ matrix.browser }}"
+            echo "Listing TCall directory contents:"
+            ls -la || echo "TCall directory not found"
+            
             cd Tcall/e2e
+            echo "Changed to TCall/e2e directory: $(pwd)"
+            echo "Listing TCall/e2e contents:"
+            ls -la || echo "TCall/e2e directory not found"
+            
             echo "Installing TCall e2e dependencies..."
             npm install || echo "Dependencies installation completed with warnings"
-            echo "Current directory: $(pwd)"
-            echo "Checking for test files:"
+            
+            echo "Checking for cypress directory:"
+            ls -la cypress/ || echo "cypress directory not found"
+            echo "Checking for cypress/e2e directory:"
             ls -la cypress/e2e/ || echo "cypress/e2e directory not found"
+            
             if [ "${{ matrix.browser }}" = "chrome" ]; then
               echo "📋 TCALL STAGING - ALL 175 ENDPOINTS"
               echo "🌐 Environment: https://api.dev.tcall.ai:8006"
