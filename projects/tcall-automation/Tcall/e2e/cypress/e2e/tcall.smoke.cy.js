@@ -5,8 +5,8 @@ const BASE_URL      = "https://api.dev.tcall.ai:8006";
 const LOGIN_PATH    = "/api/auth/login/";     // <- FIXED (was /app/auth/login/)
 const CALL_INIT     = "/api/calls/initiate/"; // unchanged
 
-const EMAIL         = "test@tcall.ai";
-const PASSWORD      = "test123";
+const EMAIL         = "test-user@tcall.ai";
+const PASSWORD      = "test-password-123";
 
 // optional placeholders you’ll use later
 const AGENT_ID      = 152;
