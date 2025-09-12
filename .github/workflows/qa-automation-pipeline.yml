@@ -61,37 +61,37 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm ci
 
-                  - name: 🧪 Run Comprehensive Endpoint Tests
-                    run: |
-                      cd projects/${{ matrix.project }}
-                      if [ "${{ matrix.project }}" = "tcall-automation" ]; then
-                        echo "🚀 RUNNING TCALL COMPREHENSIVE ENDPOINT TESTS - ${{ matrix.browser }}"
-                        cd Tcall/e2e
-                        echo "Installing TCall e2e dependencies..."
-                        npm install || echo "Dependencies installation completed with warnings"
-                        if [ "${{ matrix.browser }}" = "chrome" ]; then
-                          echo "📋 TCALL STAGING - ALL 175 ENDPOINTS"
-                          echo "🌐 Environment: https://api.dev.tcall.ai:8006"
-                          npm run test:complete-endpoints --env ENVIRONMENT=staging || echo "⚠️ TCall staging comprehensive tests completed with warnings"
-                        elif [ "${{ matrix.browser }}" = "firefox" ]; then
-                          echo "📋 TCALL PRODUCTION - ALL 175 ENDPOINTS"
-                          echo "🌐 Environment: https://prod.backend.tcall.ai"
-                          npm run test:complete-endpoints --env ENVIRONMENT=production || echo "⚠️ TCall production comprehensive tests completed with warnings"
-                        else
-                          echo "📋 TCALL COMPREHENSIVE - ALL 175 ENDPOINTS (Edge Browser)"
-                          echo "🌐 Environment: https://api.dev.tcall.ai:8006"
-                          npm run test:complete-endpoints --env ENVIRONMENT=staging || echo "⚠️ TCall comprehensive tests completed with warnings"
-                        fi
-                      elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then
-                        echo "🚀 RUNNING MEDCOR COMPREHENSIVE ENDPOINT TESTS - ${{ matrix.browser }}"
-                        echo "📋 MEDCOR STAGING - ALL 143 ENDPOINTS"
-                        echo "🌐 Environment: https://api.medcor.ai"
-                        cd "Medcor Automation"
-                        npm run test:complete-endpoints || echo "⚠️ Medcor comprehensive endpoint tests completed with warnings"
-                      else
-                        echo "Running basic tests for ${{ matrix.project }}"
-                        npm test || echo "Tests completed with warnings"
-                      fi
+      - name: 🧪 Run Comprehensive Endpoint Tests
+        run: |
+          cd projects/${{ matrix.project }}
+          if [ "${{ matrix.project }}" = "tcall-automation" ]; then
+            echo "🚀 RUNNING TCALL COMPREHENSIVE ENDPOINT TESTS - ${{ matrix.browser }}"
+            cd Tcall/e2e
+            echo "Installing TCall e2e dependencies..."
+            npm install || echo "Dependencies installation completed with warnings"
+            if [ "${{ matrix.browser }}" = "chrome" ]; then
+              echo "📋 TCALL STAGING - ALL 175 ENDPOINTS"
+              echo "🌐 Environment: https://api.dev.tcall.ai:8006"
+              npm run test:complete-endpoints --env ENVIRONMENT=staging || echo "⚠️ TCall staging comprehensive tests completed with warnings"
+            elif [ "${{ matrix.browser }}" = "firefox" ]; then
+              echo "📋 TCALL PRODUCTION - ALL 175 ENDPOINTS"
+              echo "🌐 Environment: https://prod.backend.tcall.ai"
+              npm run test:complete-endpoints --env ENVIRONMENT=production || echo "⚠️ TCall production comprehensive tests completed with warnings"
+            else
+              echo "📋 TCALL COMPREHENSIVE - ALL 175 ENDPOINTS (Edge Browser)"
+              echo "🌐 Environment: https://api.dev.tcall.ai:8006"
+              npm run test:complete-endpoints --env ENVIRONMENT=staging || echo "⚠️ TCall comprehensive tests completed with warnings"
+            fi
+          elif [ "${{ matrix.project }}" = "medcor-healthcare" ]; then
+            echo "🚀 RUNNING MEDCOR COMPREHENSIVE ENDPOINT TESTS - ${{ matrix.browser }}"
+            echo "📋 MEDCOR STAGING - ALL 143 ENDPOINTS"
+            echo "🌐 Environment: https://api.medcor.ai"
+            cd "Medcor Automation"
+            npm run test:complete-endpoints || echo "⚠️ Medcor comprehensive endpoint tests completed with warnings"
+          else
+            echo "Running basic tests for ${{ matrix.project }}"
+            npm test || echo "Tests completed with warnings"
+          fi
 
       - name: 📊 Upload Test Results
         uses: actions/upload-artifact@v4
