@@ -58,6 +58,21 @@ jobs:
     name: 🧪 Test Execution
     runs-on: ubuntu-latest
     needs: code-quality
+    env:
+      # TCall API Credentials
+      CYPRESS_ADMIN_EMAIL: ${{ secrets.TCALL_ADMIN_EMAIL }}
+      CYPRESS_ADMIN_PASSWORD: ${{ secrets.TCALL_ADMIN_PASSWORD }}
+      CYPRESS_TEST_EMAIL: ${{ secrets.TCALL_USER_EMAIL }}
+      CYPRESS_TEST_PASSWORD: ${{ secrets.TCALL_USER_PASSWORD }}
+      # Medcor API Credentials
+      CYPRESS_SUPER_USER_EMAIL: ${{ secrets.MEDCOR_SUPER_USER_EMAIL }}
+      CYPRESS_SUPER_USER_PASSWORD: ${{ secrets.MEDCOR_SUPER_USER_PASSWORD }}
+      CYPRESS_HOSPITAL_ADMIN_EMAIL: ${{ secrets.MEDCOR_HOSPITAL_ADMIN_EMAIL }}
+      CYPRESS_HOSPITAL_ADMIN_PASSWORD: ${{ secrets.MEDCOR_HOSPITAL_ADMIN_PASSWORD }}
+      CYPRESS_DOCTOR_EMAIL: ${{ secrets.MEDCOR_DOCTOR_EMAIL }}
+      CYPRESS_DOCTOR_PASSWORD: ${{ secrets.MEDCOR_DOCTOR_PASSWORD }}
+      CYPRESS_PATIENT_EMAIL: ${{ secrets.MEDCOR_PATIENT_EMAIL }}
+      CYPRESS_PATIENT_PASSWORD: ${{ secrets.MEDCOR_PATIENT_PASSWORD }}
     strategy:
       matrix:
         project: [tcall-automation, medcor-healthcare]
