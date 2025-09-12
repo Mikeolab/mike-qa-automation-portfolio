@@ -1,0 +1,43 @@
+name: 🔍 Debug File Structure
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 🔍 Debug File Structure
+        run: |
+          echo "=== ROOT DIRECTORY ==="
+          pwd
+          ls -la
+          
+          echo "=== PROJECTS DIRECTORY ==="
+          ls -la projects/
+          
+          echo "=== TCALL AUTOMATION DIRECTORY ==="
+          ls -la projects/tcall-automation/
+          
+          echo "=== TCALL E2E DIRECTORY ==="
+          ls -la projects/tcall-automation/Tcall/e2e/
+          
+          echo "=== CYPRESS DIRECTORY ==="
+          ls -la projects/tcall-automation/Tcall/e2e/cypress/
+          
+          echo "=== CYPRESS E2E DIRECTORY ==="
+          ls -la projects/tcall-automation/Tcall/e2e/cypress/e2e/
+          
+          echo "=== LOOKING FOR SPECIFIC FILE ==="
+          find . -name "*tcall-comprehensive-endpoint-testing*" -type f
+          
+          echo "=== CHECKING IF FILE EXISTS ==="
+          if [ -f "projects/tcall-automation/Tcall/e2e/cypress/e2e/tcall-comprehensive-endpoint-testing.cy.js" ]; then
+            echo "✅ FILE EXISTS!"
+            ls -la "projects/tcall-automation/Tcall/e2e/cypress/e2e/tcall-comprehensive-endpoint-testing.cy.js"
+          else
+            echo "❌ FILE NOT FOUND!"
+          fi
