@@ -121,6 +121,9 @@ jobs:
             if [ "${{ matrix.browser }}" = "chrome" ]; then
               echo "📋 TCALL STAGING - ALL 175 ENDPOINTS"
               echo "🌐 Environment: https://api.dev.tcall.ai:8006"
+              echo "🔐 Debugging credentials:"
+              echo "CYPRESS_ADMIN_EMAIL: ${CYPRESS_ADMIN_EMAIL:0:10}..."
+              echo "CYPRESS_ADMIN_PASSWORD: ${CYPRESS_ADMIN_PASSWORD:0:5}..."
               npx cypress run --config-file cypress.config.senior.qa.js --spec './cypress/e2e/tcall-comprehensive-endpoint-testing.cy.js' --env ENVIRONMENT=staging || echo "⚠️ TCall staging comprehensive tests completed with warnings"
             elif [ "${{ matrix.browser }}" = "firefox" ]; then
               echo "📋 TCALL PRODUCTION - ALL 175 ENDPOINTS"
