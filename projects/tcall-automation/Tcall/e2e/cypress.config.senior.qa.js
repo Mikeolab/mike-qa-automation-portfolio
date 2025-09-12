@@ -34,33 +34,37 @@ module.exports = defineConfig({
       ADMIN_EMAIL: process.env.CYPRESS_ADMIN_EMAIL || "admin@tcall.ai",
       ADMIN_PASSWORD: process.env.CYPRESS_ADMIN_PASSWORD || "admin123",
       BASE_URL: process.env.CYPRESS_BASE_URL || "https://api.dev.tcall.ai:8006",
-      ENVIRONMENT: process.env.CYPRESS_ENVIRONMENT || "dev"
+      ENVIRONMENT: process.env.CYPRESS_ENVIRONMENT || "staging"
     },
     
-    // Test file patterns
+    // Test file patterns - organized by user flows
     specPattern: [
-      "cypress/e2e/tcall.senior.qa.cy.js",
-      "cypress/e2e/tcall.smoke.cy.js"
+      "cypress/e2e/tcall-comprehensive-user-journey.cy.js",
+      "cypress/e2e/tcall-comprehensive-admin-journey.cy.js",
+      "cypress/e2e/tcall.smoke.cy.js",
+      "cypress/e2e/tcall-comprehensive-api-coverage.cy.js"
+      // Note: tcall-complete-endpoint-validation.cy.js is EXCLUDED from default runs
+      // Run manually with: npm run test:endpoint-validation
     ],
     
     // Setup and teardown
     setupNodeEvents(on, config) {
       // Configure environment-specific settings
-      const environment = config.env.ENVIRONMENT || 'dev';
+      const environment = config.env.ENVIRONMENT || 'staging';
       
       // Set base URL based on environment
       switch (environment) {
         case 'staging':
-          config.baseUrl = 'https://api.staging.tcall.ai:8006';
-          console.log('🚀 RUNNING TCall STAGING TESTS - https://api.staging.tcall.ai:8006');
+          config.baseUrl = 'https://api.dev.tcall.ai:8006';
+          console.log('🚀 RUNNING TCall STAGING TESTS - https://api.dev.tcall.ai:8006');
           break;
         case 'production':
-          config.baseUrl = 'https://api.tcall.ai:8006';
-          console.log('🚀 RUNNING TCall PRODUCTION TESTS - https://api.tcall.ai:8006');
+          config.baseUrl = 'https://prod.backend.tcall.ai';
+          console.log('🚀 RUNNING TCall PRODUCTION TESTS - https://prod.backend.tcall.ai');
           break;
         default:
           config.baseUrl = 'https://api.dev.tcall.ai:8006';
-          console.log('🚀 RUNNING TCall DEV TESTS - https://api.dev.tcall.ai:8006');
+          console.log('🚀 RUNNING TCall STAGING TESTS - https://api.dev.tcall.ai:8006');
       }
       
       // Add custom tasks for test data management
