@@ -31,6 +31,16 @@ describe('TCall Platform - COMPREHENSIVE Endpoint Testing (ALL 175 Endpoints)', 
     categories: {}
   };
 
+  // Helper function to log detailed error information
+  function logDetailedError(endpoint, method, url, response, expectedStatus) {
+    cy.log(`❌ ${method} ${url}`);
+    cy.log(`   Expected: ${expectedStatus}, Got: ${response.status}`);
+    cy.log(`   Response: ${JSON.stringify(response.body).substring(0, 200)}...`);
+    if (response.status >= 400) {
+      cy.log(`   🔍 This endpoint is failing with HTTP ${response.status}`);
+    }
+  }
+
   before(() => {
     // Authenticate as admin for comprehensive testing
     cy.request({
@@ -226,6 +236,9 @@ describe('TCall Platform - COMPREHENSIVE Endpoint Testing (ALL 175 Endpoints)', 
         failOnStatusCode: false
       }).then((response) => {
         const passed = response.status === 200;
+        if (!passed) {
+          cy.log(`❌ Login failed: ${response.status} - ${JSON.stringify(response.body)}`);
+        }
         trackTestResult('Authentication', 'POST /api/auth/login/', passed);
         expect(response.status).to.be.oneOf([200, 401, 400]);
         cy.log(`📊 POST /api/auth/login/ - Status: ${response.status}`);
@@ -290,6 +303,9 @@ describe('TCall Platform - COMPREHENSIVE Endpoint Testing (ALL 175 Endpoints)', 
         failOnStatusCode: false
       }).then((response) => {
         const passed = response.status === 200 || response.status === 201;
+        if (!passed) {
+          logDetailedError('Agent Creation', 'POST', '/agents/api/', response, '200 or 201');
+        }
         trackTestResult('Agent Management', 'POST /agents/api/', passed);
         expect(response.status).to.be.oneOf([200, 201, 400, 401, 403]);
         cy.log(`📊 POST /agents/api/ - Status: ${response.status}`);
