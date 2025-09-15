@@ -1,12 +1,12 @@
-# 🚀 Mike's QA Automation Portfolio
+# 🚀 Akinwale Michael's QA Automation Portfolio
 
-> **Senior QA Automation Engineer | Full-Stack Testing Specialist | Commercial Platform Developer**
+> **QA Automation Engineer | Full-Stack Testing Specialist | Commercial Platform Developer**
 
 A comprehensive showcase of real-world QA automation projects across healthcare, telecommunications, blockchain, and SaaS industries. Each project represents actual challenges solved and production systems delivered.
 
 ## 🎯 About Me
 
-I'm a Senior QA Automation Engineer with 5+ years of experience building production-ready testing solutions. Starting as a Software Technician and Computer Instructor, I've evolved into a full-stack testing specialist who delivers commercial-grade applications that actually work. I specialize in solving complex technical challenges across multiple industries.
+I'm a QA Automation Engineer with years of experience building production-ready testing solutions. Starting as a Software Technician and Computer Instructor, I've evolved into a full-stack testing specialist who delivers commercial-grade applications that actually work. I specialize in solving complex technical challenges across multiple industries.
 
 **What I Do:**
 - 🛠️ **Build Real Solutions**: Custom automation frameworks that solve actual business problems
@@ -48,12 +48,19 @@ I'm a Senior QA Automation Engineer with 5+ years of experience building product
 - Focused on identifying and resolving critical issues while improving overall system reliability
 - **Key Skills**: QA Testing (Manual and Automation), Postman API, Azure DevOps, Blockchain Testing
 
-### **QA Engineer** | Tcall Inc  
-*May 2025 - Present | Remote*
-- Contributing to Task Management and QA of Tcall's AI Agent Call Service platform
-- Ensuring seamless integration of features across Medcor's AI-powered healthcare application
-- Designing and executing comprehensive test cases across multiple user roles and workflows
-- **Key Skills**: GitHub Actions, Cypress, API Testing, Healthcare Compliance
+### **QA Engineer** | Tcall.ai  
+*May 2025 | Remote*
+- Contributed to Task Management and QA of Tcall's AI Agent Call Service platform
+- Built custom webhook proxy enabling comprehensive call flow testing (95% coverage improvement)
+- Developed automated testing solutions using Cypress and GitHub Actions; achieved zero production failures
+- **Key Skills**: GitHub Actions, Cypress, API Testing, Webhook Proxy Development
+
+### **QA Engineer** | Medcor Healthcare
+*June 2025 | Remote*
+- Ensured seamless integration of features across Medcor's AI-powered healthcare application
+- Designed and executed comprehensive test cases across multiple user roles (doctors, nurses, admins)
+- Implemented role-based testing framework for complex healthcare workflows with HIPAA compliance
+- **Key Skills**: Healthcare Compliance, Multi-Role Testing, HIPAA Validation, Role-Based Access Control
 
 ### **Founder & Software Developer** | SoftDeploy
 *2025 - Present | Self-Employed*
@@ -64,7 +71,7 @@ I'm a Senior QA Automation Engineer with 5+ years of experience building product
 
 ### **Software Technician** | Upwork (Freelance)
 *June 2021 - July 2024 | Remote*
-- Delivered software solutions and technical troubleshooting for clients worldwide
+- Delivered 50+ successful software projects across various industries with 98% client satisfaction
 - Specialized in web and mobile application testing, deployment, and automation
 - Ensured high-quality deliverables through comprehensive testing methodologies
 - **Key Skills**: Certified Software Quality Engineer, Software Troubleshooting, Cross-Platform Testing
@@ -193,12 +200,10 @@ mike-qa-automation-portfolio/
 
 I'm always interested in discussing QA automation challenges, technical solutions, and new opportunities.
 
-- **LinkedIn**: [Connect with me on LinkedIn](http://linkedin.com/in/olowolabi-akinwale-michael-84353432a)
-- **Email**: olowolabiakinwale@gmail.com
-- **GitHub**: [View my other projects](https://github.com/Mikeolab)
+- **GitHub**: [View my QA automation portfolio](https://github.com/Mikeolab/mike-qa-automation-portfolio/)
 
 **Available for:**
-- Senior QA Automation Engineer roles
+- QA Automation Engineer roles
 - Technical consulting projects
 - Full-stack development opportunities
 - Commercial platform development
