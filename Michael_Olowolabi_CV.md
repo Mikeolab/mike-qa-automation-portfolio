@@ -31,8 +31,8 @@ QA Engineer | Medcor Healthcare | June 2025 | Remote
 
 Founder & Software Developer | SoftDeploy | 2025 - Present | Self-Employed
 • Building unified app development, QA automation, and CI/CD platform for engineering teams
-• Developing a full-stack applications with AI-powered test generation using Gemini AI
-• Creating a production-ready commercial application with real test execution capabilities
+• Developing full-stack applications with AI-powered test generation using Gemini AI
+• Creating production-ready commercial application with real test execution capabilities
 
 Software Technician | Upwork (Freelance) | June 2021 - July 2024 | Remote
 • Delivered 50+ successful software projects across various industries with 98% client     satisfaction
@@ -47,7 +47,7 @@ KEY ACHIEVEMENTS
 • Zero Critical Bugs: Maintained production releases across all projects for 18+ months
 • Cross-Industry Expertise: Delivered solutions in healthcare, telecom, blockchain, and SaaS
 • Technical Innovation: Created custom webhook proxy and AI test generation solutions
-• Commercial Success: Built sellable SoftDeploy platform
+• Commercial Success: Building sellable SoftDeploy platform
 • Full-Stack Development: Complete applications from frontend to backend with CI/CD integration
 
 EDUCATION & CERTIFICATIONS
