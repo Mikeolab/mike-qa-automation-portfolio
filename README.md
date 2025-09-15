@@ -6,7 +6,7 @@ A comprehensive showcase of real-world QA automation projects across healthcare,
 
 ## 🎯 About Me
 
-I'm a Senior QA Automation Engineer with years of experience building production-ready testing solutions. I specialize in solving complex technical challenges and delivering commercial-grade applications that actually work.
+I'm a Senior QA Automation Engineer with 5+ years of experience building production-ready testing solutions. Starting as a Software Technician and Computer Instructor, I've evolved into a full-stack testing specialist who delivers commercial-grade applications that actually work. I specialize in solving complex technical challenges across multiple industries.
 
 **What I Do:**
 - 🛠️ **Build Real Solutions**: Custom automation frameworks that solve actual business problems
@@ -14,6 +14,7 @@ I'm a Senior QA Automation Engineer with years of experience building production
 - 🚀 **Ship Production Code**: Complete applications from frontend to backend
 - 📊 **Cross-Industry Expertise**: Healthcare, telecom, blockchain, and SaaS platforms
 - 🏥 **Commercial Development**: Built and launched sellable products
+- 💻 **Software Technician Background**: Started with hands-on technical troubleshooting and evolved into senior automation engineering
 
 ## 🏆 Featured Projects
 
@@ -37,6 +38,43 @@ I'm a Senior QA Automation Engineer with years of experience building production
 **My Solution**: Built a full-stack application with AI-powered test generation and real browser automation
 **Real Impact**: Complete commercial application ready for market, real test execution (not simulation)
 
+
+## 💼 Professional Experience
+
+### **Software Quality Assurance Engineer** | Confidios
+*September 2024 - Present | Remote*
+- Performing comprehensive QA testing and API validation for Confidios, a self-sovereign data platform
+- Ensuring seamless integration with customer systems through automated testing protocols
+- Focused on identifying and resolving critical issues while improving overall system reliability
+- **Key Skills**: QA Testing (Manual and Automation), Postman API, Azure DevOps, Blockchain Testing
+
+### **QA Engineer** | Tcall Inc  
+*May 2025 - Present | Remote*
+- Contributing to Task Management and QA of Tcall's AI Agent Call Service platform
+- Ensuring seamless integration of features across Medcor's AI-powered healthcare application
+- Designing and executing comprehensive test cases across multiple user roles and workflows
+- **Key Skills**: GitHub Actions, Cypress, API Testing, Healthcare Compliance
+
+### **Founder & Software Developer** | SoftDeploy
+*2025 - Present | Self-Employed*
+- Building SoftDeploy to unify app development, QA automation, and CI/CD for engineering teams
+- Developing full-stack applications with AI-powered test generation capabilities
+- Creating commercial-grade test automation platforms with real browser automation
+- **Key Skills**: MySQL, Vite, React, Node.js, AI Integration
+
+### **Software Technician** | Upwork (Freelance)
+*June 2021 - July 2024 | Remote*
+- Delivered software solutions and technical troubleshooting for clients worldwide
+- Specialized in web and mobile application testing, deployment, and automation
+- Ensured high-quality deliverables through comprehensive testing methodologies
+- **Key Skills**: Certified Software Quality Engineer, Software Troubleshooting, Cross-Platform Testing
+
+### **Computer Instructor** | Sobtake Computer School
+*June 2019 - March 2021 | On-Site*
+- Taught computer science fundamentals and software development concepts
+- Developed curriculum for programming languages and software testing methodologies
+- Mentored students in practical software development and quality assurance
+- **Key Skills**: Technical Training, Curriculum Development, Student Mentoring
 
 ## 🛠️ Technical Skills
 
