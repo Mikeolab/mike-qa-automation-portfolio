@@ -1,0 +1,33 @@
+Medcor - Comprehensive Endpoint Testing Report (2025-09-20)
+
+Environment
+Base URL: https://api.medcor.ai (staging)
+Runner: Cypress 13.17.0 (Electron headless)
+
+Run Summary
+Total tests: 138
+Passing: 89
+Failing: 49
+Screenshots: 147
+Results JSON: cypress/results/mochawesome_016.json
+
+Strict Failures (404 kept as failure)
+- Hospital creation/list: 404 observed where 2xx/4xx expected
+- Patient creation/list: 404 observed
+- Doctor creation/list: 404 observed
+- Integration (EHR, Pharmacy, Billing): 404 observed
+- Notifications (appointment, prescription, lab, emergency): 404 observed
+- Security & Compliance (encryption, privacy): 404 observed
+- Advanced Healthcare (CDS, drug interaction, risk assessment, care plan): 404 observed
+- Emergency Management (triage, alerts, response, documentation): 404 observed
+- Telemedicine (virtual consultation, remote monitoring): 404 observed
+- Laboratory Management (lab order creation): 404 observed
+
+Notes
+- Negative, permissions, pagination, and rate-limits suites pass in staging after aligning expectations.
+- Failures likely indicate endpoints not enabled in staging or masked/renamed per new spec.
+
+Recommended Next Steps
+- Confirm which routes should be enabled in staging vs masked.
+- Provide expected status semantics for integration/advanced endpoints (e.g., 200/202 vs 404 masking).
+- After confirmation, align assertions and re-run full coverage.
