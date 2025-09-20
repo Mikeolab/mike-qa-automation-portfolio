@@ -2,8 +2,8 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   e2e: {
-    // Hard-set for your smoke env; CI can still override with CYPRESS_BASE_URL
-    baseUrl: "https://test.tcall.ai",
+    // Hard-set for your dev env; CI can still override with CYPRESS_BASE_URL
+    baseUrl: "https://api.dev.tcall.ai:8006",
     supportFile: "cypress/support/e2e.js",
     video: false,
     defaultCommandTimeout: 12000,

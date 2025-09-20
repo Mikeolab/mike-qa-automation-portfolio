@@ -43,7 +43,9 @@ module.exports = defineConfig({
       "cypress/e2e/tcall-comprehensive-admin-journey.cy.js",
       "cypress/e2e/tcall.smoke.cy.js",
       "cypress/e2e/tcall-comprehensive-api-coverage.cy.js",
-      "cypress/e2e/tcall-comprehensive-endpoint-testing.cy.js"
+      "cypress/e2e/tcall-comprehensive-endpoint-testing.cy.js",
+      "cypress/e2e/tcall-agent-provider-sync.cy.js",
+      "cypress/e2e/tcall-provider-call.cy.js"
       // Note: tcall-complete-endpoint-validation.cy.js is EXCLUDED from default runs
       // Run manually with: npm run test:endpoint-validation
     ],

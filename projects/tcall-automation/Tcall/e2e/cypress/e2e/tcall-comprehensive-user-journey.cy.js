@@ -99,8 +99,8 @@ describe('TCall Platform - Complete User Journey', () => {
       method: 'POST',
       url: `${Cypress.config('baseUrl')}/api/auth/login/`,
       body: {
-        email: Cypress.env('TEST_EMAIL') || 'test-user@tcall.ai',
-        password: Cypress.env('TEST_PASSWORD') || 'test-password-123'
+        email: Cypress.env('TEST_EMAIL') || 'test@tcall.ai',
+        password: Cypress.env('TEST_PASSWORD') || 'test123'
       },
       headers: {
         'Content-Type': 'application/json'

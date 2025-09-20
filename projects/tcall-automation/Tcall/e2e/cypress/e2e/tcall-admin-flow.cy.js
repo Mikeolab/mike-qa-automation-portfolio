@@ -36,8 +36,8 @@ describe('TCall Admin Flow Tests', () => {
       method: 'POST',
       url: `${Cypress.config('baseUrl')}/api/auth/login/`,
       body: {
-        email: Cypress.env('ADMIN_EMAIL') || 'test-admin@tcall.ai',
-        password: Cypress.env('ADMIN_PASSWORD') || 'test-password-123'
+        email: Cypress.env('ADMIN_EMAIL') || 'admin@tcall.ai',
+        password: Cypress.env('ADMIN_PASSWORD') || 'admin123'
       },
       headers: {
         'Content-Type': 'application/json'
